@@ -1,19 +1,13 @@
-import './App.css';
-import Layout from './Pages/layout';
-import {Outlet} from 'react-router-dom'
+import Router from "./Routes";
+
+
 
 function App() {
 
 
   return (
     <>
-    <h1>HELLO!!</h1>
-
-
-
-
-
-    <Outlet/>
+    <Router/>
     </>
   );
 }
