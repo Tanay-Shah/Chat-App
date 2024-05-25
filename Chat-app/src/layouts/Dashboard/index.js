@@ -11,7 +11,7 @@ import { Contex } from "../../contexs/setting";
 
 export default function DashboardLayout() {
 
-  const {onToggle}=useContext(Contex)
+  const {onToggle,themeMode}=useContext(Contex)
   const theme = useTheme()
   const [selected, setState] = useState(0)
 
@@ -53,6 +53,7 @@ export default function DashboardLayout() {
               />
             </Box>
 
+            {themeMode==='light'? 
             <Stack sx={{ width: "max-content" }} direction="column" spacing={3}>
               {Nav_Buttons.map((el) => {
                 return el.index === selected ? (
@@ -101,7 +102,59 @@ export default function DashboardLayout() {
                   <GearSix />
                 </IconButton>
               )}
+            </Stack> :
+            <Stack sx={{ width: "max-content" }} direction="column" spacing={3}>
+              {Nav_Buttons.map((el) => {
+                return el.index === selected ? (
+                  <Box
+                    key={el.index}
+                    sx={{
+                      background: theme.palette.primary.main,
+                      borderRadius: 1.5,
+                    }}
+                  >
+                    <IconButton sx={{ color: "#000" }}>{el.icon}</IconButton>
+                  </Box>
+                ) : (
+                  <IconButton
+                    sx={{ color: "#fff" }}
+                    onClick={() => {
+                      setState(el.index);
+                    }}
+                    key={el.index}
+                  >
+                    {el.icon}
+                  </IconButton>
+                );
+              })}
+
+              <Divider />
+
+              {selected === 3 ? (
+                <Box
+                  sx={{
+                    background: theme.palette.primary.main,
+                    borderRadius: 1.5,
+                  }}
+                >
+                  <IconButton sx={{ color: "#000" }}>
+                    <GearSix />
+                  </IconButton>
+                </Box>
+              ) : (
+                <IconButton
+                  sx={{ color: "#fff" }}
+                  onClick={() => {
+                    setState(3);
+                  }}
+                >
+                  <GearSix />
+                </IconButton>
+              )}
             </Stack>
+             
+            }
+           
           </Stack>
 
 
