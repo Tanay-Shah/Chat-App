@@ -4,13 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter} from 'react-router-dom';
+import Setting from './contexs/setting';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
   <React.StrictMode>
+  {/* Setting is a custom wrapper component Which is used for Maintain Neat and clean Code */}
+  <Setting>
     <App/>
+    </Setting>
   </React.StrictMode>
   </BrowserRouter>
 );

@@ -20,6 +20,7 @@ const Lodable=(Component)=>(props)=>{
 
 export default function Router() {
 
+  
 
   return useRoutes([
     {
@@ -28,7 +29,7 @@ export default function Router() {
       element: <DashboardLayout />,
 
       children: [
-        {element: <navigate to={PATH_DASHBOARD.genral.app} replace/>,index:true},
+        {element: <Navigate to={PATH_DASHBOARD.genral.app} replace/>,index:true},
         {path: "app", element: <GeneralApp/>},
 
         {path:"404", element:<Page404/>},
