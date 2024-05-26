@@ -11,10 +11,12 @@ import {
   Button,
   Avatar,
   Badge,
+  
 } from "@mui/material";
 import { ArchiveBox, CircleDashed, MagnifyingGlass } from "phosphor-react";
-import { alpha } from "@mui/material/styles";
-import { faker } from "@faker-js/faker";
+import { alpha, useTheme } from "@mui/material/styles";
+import { ChatList } from "../../data";
+
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -75,60 +77,76 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
-const ChatElement = () => {
+const ChatElement = (props) => {
+  const theme=useTheme();
+
   return (
     <Box
       sx={{
         width: "100%",
         height: 50,
         borderRadius: 1,
-        boxShadow: "1px 1px 1px rgba(0,0,0,0.25)",
-        backgroundColor: "#fff",
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        backgroundColor: theme.palette.mode==='light'?"#fff":theme.palette.background.paper,
       }}
       alignContent="center"
       p={2}
     >
       <Stack direction="row" justifyContent="space-between">
         <Stack direction="row" spacing={2}>
-          <StyledBadge
-            overlap="circular"
-            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-            variant="dot"
-          >
-            <Avatar src={faker.image.avatar()} />
-          </StyledBadge>
+          {props.online ? (
+            <StyledBadge
+              overlap="circular"
+              anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+              variant="dot"
+            >
+              <Avatar src={props.img} />
+            </StyledBadge>
+          ) : (
+            <Avatar src={props.img} />
+          )}
 
           <Stack direction="column">
             <Typography variant={"subtitle2"} fontWeight={600}>
-              Tanay Shah
+              {props.name}
             </Typography>
-            <Typography fontSize={12}>You: thnxx!</Typography>
+            <Typography fontSize={12}>{props.msg}</Typography>
           </Stack>
-
         </Stack>
-      
-      <Stack  direction='column' spacing={1}>
-      <Box>{`${new Date().getHours()}:${new Date().getMinutes()}`}</Box>
-      
 
-      </Stack>
-        
+        <Stack direction="column" spacing={2} alignItems={"center"}>
+          <Typography sx={{ fontWeight: "600" }} variant="caption">
+            {props.time}
+          </Typography>
+          <Badge color="primary" badgeContent={props.unread}></Badge>
+        </Stack>
       </Stack>
     </Box>
   );
 };
 
+
+const SlimScrollbarStack = styled(Stack)({
+  /* Styling the scrollbar for WebKit-based browsers */
+  '&::-webkit-scrollbar': {
+    width: '0px', /* Adjust the width to make it slimmer */
+  }
+});
+
+
+
 function Chat() {
+  const theme=useTheme();
   return (
     <Paper elevation={2}>
       <Box
         sx={{
-          height: "100vh",
+          position: "relative",
           width: 320,
-          backgroundColor: "#F8FAFF",
+          backgroundColor: theme.palette.mode==='light'?"#F8FAFF":theme.palette.background.paper,
         }}
       >
-        <Stack p={3} spacing={2}>
+        <Stack p={3} spacing={2} sx={{ height: "92vh" }}>
           <Stack
             direction="row"
             justifyContent="space-between"
@@ -147,7 +165,10 @@ function Chat() {
               <SearchIconWrapper>
                 <MagnifyingGlass color="#709CE6" />
               </SearchIconWrapper>
-              <StyledInputBase placeholder="Search..." />
+              <StyledInputBase
+                placeholder="Search..."
+                inputProps={{ "aria-label": "search" }}
+              />
             </Search>
           </Stack>
           <Stack spacing={1}>
@@ -162,9 +183,30 @@ function Chat() {
             <Divider />
           </Stack>
 
-          <Stack direction="coloumn">
-            <ChatElement />
+          <SlimScrollbarStack sx={{flexGrow:1,height: "100%", overflow:'scroll', overflowX: 'hidden'  }}>
+          <Stack >
+           <Stack spacing={2} alignItems={"center"}>
+                <Typography fontSize={12} fontWeight={600} color={"#676767"}>
+                  Pinned
+                </Typography>
+                {ChatList.filter((el) => {
+                  return el.pinned === true;
+                }).map((el) => {
+                  return <ChatElement key={el.id} {...el} />;
+                })}
+
+                <Typography fontSize={12} fontWeight={600} color={"#676767"}>
+                  All Chats
+                </Typography>
+                {ChatList.filter((el) => {
+                  return el.pinned !== true;
+                }).map((el) => {
+                  return <ChatElement key={el.id} {...el} />;
+                })}
+              </Stack>
           </Stack>
+
+              </SlimScrollbarStack>
         </Stack>
       </Box>
     </Paper>
