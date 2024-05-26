@@ -58,7 +58,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
       width: "100%",
       height: "100%",
       borderRadius: "50%",
-      // animation: "ripple 1.2s infinite ease-in-out", 
+      // animation: "ripple 1.2s infinite ease-in-out",
       border: "1px solid currentColor",
       content: '""',
     },
@@ -85,14 +85,35 @@ const ChatElement = () => {
         boxShadow: "1px 1px 1px rgba(0,0,0,0.25)",
         backgroundColor: "#fff",
       }}
-      alignContent='center'
+      alignContent="center"
       p={2}
     >
-      <StyledBadge  overlap="circular"
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-        variant="dot">
-        <Avatar src={faker.image.avatar()}/>
-      </StyledBadge>
+      <Stack direction="row" justifyContent="space-between">
+        <Stack direction="row" spacing={2}>
+          <StyledBadge
+            overlap="circular"
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            variant="dot"
+          >
+            <Avatar src={faker.image.avatar()} />
+          </StyledBadge>
+
+          <Stack direction="column">
+            <Typography variant={"subtitle2"} fontWeight={600}>
+              Tanay Shah
+            </Typography>
+            <Typography fontSize={12}>You: thnxx!</Typography>
+          </Stack>
+
+        </Stack>
+      
+      <Stack  direction='column' spacing={1}>
+      <Box>{`${new Date().getHours()}:${new Date().getMinutes()}`}</Box>
+      
+
+      </Stack>
+        
+      </Stack>
     </Box>
   );
 };
@@ -113,7 +134,9 @@ function Chat() {
             justifyContent="space-between"
             alignItems="center"
           >
-            <Typography variant={"h5"} fontWeight={600}  >Chats</Typography>
+            <Typography variant={"h5"} fontWeight={600}>
+              Chats
+            </Typography>
             <IconButton>
               <CircleDashed size={32} />
             </IconButton>
@@ -130,16 +153,16 @@ function Chat() {
           <Stack spacing={1}>
             <Stack alignItems="center" direction={"row"}>
               <ArchiveBox size={16} />
-              <Button >
-              <Typography fontSize={10} variant="subtitle" fontWeight={600}>
-               Archived 
-              </Typography>
+              <Button>
+                <Typography fontSize={10} variant="subtitle" fontWeight={600}>
+                  Archived
+                </Typography>
               </Button>
             </Stack>
             <Divider />
           </Stack>
 
-          <Stack direction="coloumn" >
+          <Stack direction="coloumn">
             <ChatElement />
           </Stack>
         </Stack>
