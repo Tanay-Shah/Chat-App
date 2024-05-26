@@ -12,11 +12,12 @@ import { Contex } from "../../contexs/setting";
 export default function DashboardLayout() {
 
   const {onToggle,themeMode}=useContext(Contex)
-  const theme = useTheme()
+  const theme = useTheme() 
   const [selected, setState] = useState(0)
 
   return (
-    <>
+    <Stack direction='row'>
+
       <Box
         p={2}
         sx={{
@@ -36,7 +37,7 @@ export default function DashboardLayout() {
           <Stack alignItems='center' spacing={4}>
             <Box
               sx={{
-                background: theme.palette.primary.main,
+                background: '#0162C4',
                 height: 64,
                 width: 64,
                 borderRadius: 1.5,
@@ -109,7 +110,7 @@ export default function DashboardLayout() {
                   <Box
                     key={el.index}
                     sx={{
-                      background: theme.palette.primary.main,
+                      background: "#0162C4",
                       borderRadius: 1.5,
                     }}
                   >
@@ -133,7 +134,7 @@ export default function DashboardLayout() {
               {selected === 3 ? (
                 <Box
                   sx={{
-                    background: theme.palette.primary.main,
+                    background: '#0162C4',
                     borderRadius: 1.5,
                   }}
                 >
@@ -163,10 +164,10 @@ export default function DashboardLayout() {
             <Avatar src={faker.image.avatar()} />
           </Stack>
 
-
+          
         </Stack>
       </Box>
       <Outlet />
-    </>
+    </Stack>
   );
 }

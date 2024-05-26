@@ -36,7 +36,7 @@ export default function Setting({ children }) {
     <Contex.Provider value={value}>
     {/* Providing theme For Wrapper Component For Dark Mode */}
       <ThemeProvider theme={theme}>
-        <Paper>{children}</Paper>
+        <Paper elevation={1}>{children}</Paper>
       </ThemeProvider>
     </Contex.Provider>
   );

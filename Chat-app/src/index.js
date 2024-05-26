@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
   <React.StrictMode>
-  {/* Setting is a custom wrapper component Which is used for Maintain Neat and clean Code */}
+  {/* Setting is a custom wrapper component Which is used for Maintain Neat and clean Code (CONTEX API CODEBASE)*/}
   <Setting>
     <App/>
     </Setting>
