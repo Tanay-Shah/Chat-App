@@ -83,7 +83,7 @@ function Chat() {
       <Box
         sx={{
           position: "relative",
-          width: '320px',
+          width: '320',
           backgroundColor: theme.palette.mode==='light'?"#F8FAFF":theme.palette.background.paper,
         }}
       >

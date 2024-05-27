@@ -21,10 +21,12 @@ function Chatfooter() {
   const theme = useTheme();
   return (
     <Box
+    position={"relative"}
       p={2}
       pb={4}
+      pl={7}
       sx={{
-        width: "97.8%",
+        width: 'calc(100vw - 420)',
         backgroundColor: theme.palette.background.paper,
         boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.1)",
       }}
@@ -32,7 +34,7 @@ function Chatfooter() {
       <Stack direction="row" spacing={2} alignItems={"center"}>
         <StyleField
           placeholder="Write a Message..."
-          sx={{width:'94%'}}
+          sx={{width:'92%'}}
           variant="filled"
           InputProps={{
             disableUnderline: true,
