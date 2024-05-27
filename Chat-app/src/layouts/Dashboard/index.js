@@ -80,7 +80,7 @@ export default function DashboardLayout() {
                 );
               })}
 
-              <Divider />
+              <Divider color="#000" />
 
               {selected === 3 ? (
                 <Box
