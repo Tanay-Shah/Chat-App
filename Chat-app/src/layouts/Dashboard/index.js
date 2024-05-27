@@ -6,7 +6,7 @@ import Logo from "../../assets/Images/logo.ico";
 import { Nav_Buttons } from "../../data/index";
 import { GearSix } from "phosphor-react";
 import { faker } from "@faker-js/faker";
-import { AntSwitch } from "../../components/ExtraComponents";
+import { AntSwitch } from "../../components/switch";
 import { Contex } from "../../contexs/setting";
 
 export default function DashboardLayout() {

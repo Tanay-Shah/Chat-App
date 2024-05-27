@@ -1,8 +1,6 @@
 import { Switch,styled } from '@mui/material';
 
 export const AntSwitch = styled(Switch)(({ theme }) => ({ 
-
-
   width: 40,
   height: 20,
   padding: 0,
