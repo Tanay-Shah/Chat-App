@@ -10,25 +10,32 @@ import {
   Button,
   Avatar,
   Badge,
-  
 } from "@mui/material";
 import { ArchiveBox, CircleDashed, MagnifyingGlass } from "phosphor-react";
 import { useTheme } from "@mui/material/styles";
 import { ChatList } from "../../data";
-import  {Search,SearchIconWrapper,StyledInputBase,StyledBadge} from '../../components/search'
+import {
+  Search,
+  SearchIconWrapper,
+  StyledInputBase,
+  StyledBadge,
+} from "../../components/search";
 
 const ChatElement = (props) => {
-  const theme=useTheme();
+  const theme = useTheme();
 
   return (
     <Box
       sx={{
         width: "90%",
-        m:'2',
+        m: "2",
         height: 50,
         borderRadius: 1,
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-        backgroundColor: theme.palette.mode==='light'?"#fff":theme.palette.background.paper,
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+        backgroundColor:
+          theme.palette.mode === "light"
+            ? "#fff"
+            : theme.palette.background.paper,
       }}
       alignContent="center"
       p={2}
@@ -48,10 +55,17 @@ const ChatElement = (props) => {
           )}
 
           <Stack direction="column">
+
             <Typography variant={"subtitle2"} fontWeight={600}>
               {props.name}
             </Typography>
-            <Typography fontSize={12}>{props.msg}</Typography>
+          
+            <Stack maxWidth={140}>
+              <Typography noWrap variant="plain">
+                {props.msg}
+              </Typography>
+            </Stack>
+
           </Stack>
         </Stack>
 
@@ -59,32 +73,32 @@ const ChatElement = (props) => {
           <Typography sx={{ fontWeight: "600" }} variant="caption">
             {props.time}
           </Typography>
-          <Badge color='primary' badgeContent={props.unread}></Badge>
+          <Badge color="primary" badgeContent={props.unread}></Badge>
         </Stack>
       </Stack>
     </Box>
   );
 };
 
-
 const SlimScrollbarStack = styled(Stack)({
   /* Styling the scrollbar for WebKit-based browsers */
-  '&::-webkit-scrollbar': {
-    width: '0px', /* Adjust the width to make it slimmer */
-  }
+  "&::-webkit-scrollbar": {
+    width: "0px" /* Adjust the width to make it slimmer */,
+  },
 });
 
-
-
 function Chat() {
-  const theme=useTheme();
+  const theme = useTheme();
   return (
     <Paper elevation={2}>
       <Box
         sx={{
           position: "relative",
-          width: '320',
-          backgroundColor: theme.palette.mode==='light'?"#F8FAFF":theme.palette.background.paper,
+          width: "320",
+          backgroundColor:
+            theme.palette.mode === "light"
+              ? "#F8FAFF"
+              : theme.palette.background.paper,
         }}
       >
         <Stack p={3} spacing={2} sx={{ height: "94vh" }}>
@@ -124,9 +138,16 @@ function Chat() {
             <Divider />
           </Stack>
 
-          <SlimScrollbarStack sx={{flexGrow:1,height: "100%", overflow:'scroll', overflowX: 'hidden'  }}>
-          <Stack >
-           <Stack spacing={2} alignItems={"center"}>
+          <SlimScrollbarStack
+            sx={{
+              flexGrow: 1,
+              height: "100%",
+              overflow: "scroll",
+              overflowX: "hidden",
+            }}
+          >
+            <Stack>
+              <Stack spacing={2} alignItems={"center"}>
                 <Typography fontSize={12} fontWeight={600} color={"#676767"}>
                   Pinned
                 </Typography>
@@ -145,9 +166,8 @@ function Chat() {
                   return <ChatElement key={el.id} {...el} />;
                 })}
               </Stack>
-          </Stack>
-
-              </SlimScrollbarStack>
+            </Stack>
+          </SlimScrollbarStack>
         </Stack>
       </Box>
     </Paper>

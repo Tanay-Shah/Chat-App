@@ -10,10 +10,10 @@ import {
   IconButton,
 } from "@mui/material";
 import { MagnifyingGlass, Phone, VideoCamera, CaretDown } from "phosphor-react";
-import { useTheme } from '@mui/material';
+import { useTheme } from "@mui/material";
 
 const Chatheader = () => {
-  const theme=useTheme()
+  const theme = useTheme();
   return (
     <Stack
       position={"relative"}
@@ -44,17 +44,32 @@ const Chatheader = () => {
       <Stack p={6} sx={{ justifyContent: "center" }}>
         <Stack direction={"row"} spacing={4}>
           <IconButton>
-            <VideoCamera color={theme.palette.mode==='light'?'#000':'#fff'} size={32} />
+            <VideoCamera
+              color={theme.palette.mode === "light" ? "#000" : "#fff"}
+              size={32}
+            />
           </IconButton>
           <IconButton>
-            <MagnifyingGlass color={theme.palette.mode==='light'?'#000':'#fff'} size={32} />
+            <MagnifyingGlass
+              color={theme.palette.mode === "light" ? "#000" : "#fff"}
+              size={32}
+            />
           </IconButton>
           <IconButton>
-            <Phone color={theme.palette.mode==='light'?'#000':'#fff'} size={32} />
+            <Phone
+              color={theme.palette.mode === "light" ? "#000" : "#fff"}
+              size={32}
+            />
           </IconButton>
-          <Divider color={theme.palette.mode==='light'?'#000':'#fff'} orientation="vertical" />
+          <Divider
+            color={theme.palette.mode === "light" ? "#000" : "#fff"}
+            orientation="vertical"
+          />
           <IconButton>
-            <CaretDown color={theme.palette.mode==='light'?'#000':'#fff'} size={32} />
+            <CaretDown
+              color={theme.palette.mode === "light" ? "#000" : "#fff"}
+              size={32}
+            />
           </IconButton>
         </Stack>
       </Stack>

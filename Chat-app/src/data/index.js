@@ -51,7 +51,7 @@ const ChatList = [
     id: 0,
     img: faker.image.avatar(),
     name: faker.name.firstName(),
-    msg: faker.music.songName(),
+    msg: "Can you please send this in file format Can you please send this in file format?",
     time: "9:36",
     unread: 0,
     pinned: true,

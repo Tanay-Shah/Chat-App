@@ -21,12 +21,12 @@ function Chatfooter() {
   const theme = useTheme();
   return (
     <Box
-    position={"relative"}
+      position={"relative"}
       p={2}
       pb={4}
       pl={7}
       sx={{
-        width: 'calc(100vw - 420)',
+        width: "calc(100vw - 420)",
         backgroundColor: theme.palette.background.paper,
         boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.1)",
       }}
@@ -34,21 +34,27 @@ function Chatfooter() {
       <Stack direction="row" spacing={2} alignItems={"center"}>
         <StyleField
           placeholder="Write a Message..."
-          sx={{width:'92%'}}
+          sx={{ width: "92%" }}
           variant="filled"
           InputProps={{
             disableUnderline: true,
             startAdornment: (
               <InputAdornment>
                 <IconButton>
-                  <Link  color={theme.palette.mode==='light'?'#000':'#fff'} size={28} />
+                  <Link
+                    color={theme.palette.mode === "light" ? "#000" : "#fff"}
+                    size={28}
+                  />
                 </IconButton>
               </InputAdornment>
             ),
             endAdornment: (
               <InputAdornment>
                 <IconButton>
-                  <Smiley color={theme.palette.mode==='light'?'#000':'#fff'} size={28} />
+                  <Smiley
+                    color={theme.palette.mode === "light" ? "#000" : "#fff"}
+                    size={28}
+                  />
                 </IconButton>
               </InputAdornment>
             ),
@@ -65,8 +71,11 @@ function Chatfooter() {
             justifyContent: "center",
           }}
         >
-          <IconButton >
-            <PaperPlaneTilt color={theme.palette.mode==='light'?'white':'black'} size={30} />
+          <IconButton>
+            <PaperPlaneTilt
+              color={theme.palette.mode === "light" ? "white" : "black"}
+              size={30}
+            />
           </IconButton>
         </Box>
       </Stack>

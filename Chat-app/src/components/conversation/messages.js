@@ -1,26 +1,32 @@
-import React from 'react'
-import { Stack } from '@mui/material'
-import { useTheme } from '@emotion/react'
+import React from "react";
+import { Stack ,Box} from "@mui/material";
+import { useTheme } from "@emotion/react";
+import {Chat_History} from '../../data/index'
 
 function Message() {
-  const theme=useTheme()
+  const theme = useTheme();
   return (
     <Stack
-    position={'relative'}
-    direction={"row"}
-    sx={{
-      height: "calc(100vh - 200px)",
-      width: "100%",
-      backgroundColor: theme.palette.background.paper,
-      boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.1)",
-    }}
-  >
+      position={"relative"}
+      direction={"row"}
+      sx={{
+        height: "calc(100vh - 200px)",
+        width: "100%",
+        backgroundColor: theme.palette.background.paper,
+        boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.1)",
+      }}
+    >
 
-      Message 
+        {Chat_History.map((el)=>{
+          
+          return(<Box>
+            w
+          </Box>)
+        })}
 
 
-  </Stack>
-  )
+    </Stack>
+  );
 }
 
-export default Message
+export default Message;
