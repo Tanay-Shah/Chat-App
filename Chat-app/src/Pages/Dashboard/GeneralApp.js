@@ -8,11 +8,16 @@ import Conversation from "../../components/conversation";
 export default function GeneralApp() {
   return (
     
-    <Stack direction='row'>
+    <Stack direction='row' sx={{width:"100%"}} >
+    
+    {/* Chats */}
     <Chat/>
-    <Box sx={{height:'100%',width:"100vw",backgroundColor:'black'}}>
+
+    {/* Conversation */}
+    <Box sx={{height:'100%',width:"calc(100vw - 420px)",backgroundColor:'#fff'}}>
     <Conversation/>
     </Box>
+
     </Stack>
     
   );

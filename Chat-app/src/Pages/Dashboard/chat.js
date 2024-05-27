@@ -23,7 +23,7 @@ const ChatElement = (props) => {
   return (
     <Box
       sx={{
-        width: "87%",
+        width: "90%",
         m:'2',
         height: 50,
         borderRadius: 1,
@@ -83,11 +83,11 @@ function Chat() {
       <Box
         sx={{
           position: "relative",
-          width: 320,
+          width: '320px',
           backgroundColor: theme.palette.mode==='light'?"#F8FAFF":theme.palette.background.paper,
         }}
       >
-        <Stack p={3} spacing={2} sx={{ height: "92vh" }}>
+        <Stack p={3} spacing={2} sx={{ height: "94vh" }}>
           <Stack
             direction="row"
             justifyContent="space-between"
