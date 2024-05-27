@@ -118,7 +118,7 @@ const ChatElement = (props) => {
           <Typography sx={{ fontWeight: "600" }} variant="caption">
             {props.time}
           </Typography>
-          <Badge color="primary" badgeContent={props.unread}></Badge>
+          <Badge color='primary' badgeContent={props.unread}></Badge>
         </Stack>
       </Stack>
     </Box>
