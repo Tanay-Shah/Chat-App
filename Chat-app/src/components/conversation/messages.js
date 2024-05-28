@@ -20,7 +20,7 @@ function Message() {
         {Chat_History.map((el)=>{
           
           return(<Box>
-            w
+            T
           </Box>)
         })}
 
