@@ -1,31 +1,22 @@
 import React from "react";
-import { Stack ,Box} from "@mui/material";
 import { useTheme } from "@emotion/react";
-import {Chat_History} from '../../data/index'
+import { Box } from "@mui/material";
 
-function Message() {
+function Message(props) {
   const theme = useTheme();
   return (
-    <Stack
-      position={"relative"}
-      direction={"row"}
+    <Box
+      display={"flex"}
+      m={7}
       sx={{
-        height: "calc(100vh - 200px)",
-        width: "100%",
-        backgroundColor: theme.palette.background.paper,
-        boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.1)",
+        width: 450,
+        height: 40,
+        backgroundColor: theme.palette.primary.main,
+        alignItems: "center",
       }}
     >
-
-        {Chat_History.map((el)=>{
-          
-          return(<Box>
-            T
-          </Box>)
-        })}
-
-
-    </Stack>
+      H
+    </Box>
   );
 }
 
