@@ -1,7 +1,7 @@
 import React from "react";
 import Chatheader from "./chatHeader";
 import Chatfooter from "./chatFooter";
-import Message, { MessageImg } from "./messages";
+import Message, { MessageImg,MessageLink } from "./messages";
 import { Chat_History } from "../../data/index";
 import { Stack, Box, Divider } from "@mui/material";
 import { useTheme } from "@emotion/react";
@@ -51,7 +51,7 @@ export default function Conversation() {
                     case "doc":
                       return <>Document</>;
                     case "link":
-                      return <>Link</>;
+                      return <MessageLink {...el}/>;
                     case "reply":
                       return <>Reply</>;
                     default:
