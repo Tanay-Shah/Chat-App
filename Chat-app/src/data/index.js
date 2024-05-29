@@ -51,7 +51,7 @@ const ChatList = [
     id: 0,
     img: faker.image.avatar(),
     name: faker.name.firstName(),
-    msg: "Can you please send this in file format Can you please send this in file format?",
+    msg: faker.lorem.words(50),
     time: "9:36",
     unread: 0,
     pinned: true,
@@ -162,7 +162,7 @@ const Chat_History = [
   {
     type: "msg",
     subtype: "img",
-    message: "Here You Go",
+    message: faker.lorem.words(50),
     img: faker.image.abstract(),
     incoming: true,
     outgoing: false,

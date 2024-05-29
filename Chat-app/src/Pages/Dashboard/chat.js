@@ -143,7 +143,6 @@ function Chat() {
               flexGrow: 1,
               height: "100%",
               overflow: "scroll",
-              overflowX: "hidden",
             }}
           >
             <Stack>

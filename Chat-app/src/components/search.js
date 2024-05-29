@@ -1,5 +1,5 @@
 
-import { styled,alpha,InputBase,Badge } from "@mui/material";
+import { styled,alpha,InputBase,Badge ,Stack} from "@mui/material";
 
 
 const Search = styled("div")(({ theme }) => ({
@@ -61,5 +61,11 @@ const Search = styled("div")(({ theme }) => ({
     },
   }));
   
+  const SlimScrollbarStack = styled(Stack)({
+    /* Styling the scrollbar for WebKit-based browsers */
+    "&::-webkit-scrollbar": {
+      width: "0px" /* Adjust the width to make it slimmer */,
+    },
+  });
 
-  export {Search,SearchIconWrapper,StyledInputBase,StyledBadge}
+  export {Search,SearchIconWrapper,StyledInputBase,StyledBadge,SlimScrollbarStack}
