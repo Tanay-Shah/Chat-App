@@ -193,7 +193,9 @@ const Chat_History = [
     type: "msg",
     subtype: "reply",
     reply: "This is a reply",
-    message: "Yep, I can also do that",
+    // message: "Yep, I can also do that",
+    message: faker.lorem.words(30),
+
     incoming: false,
     outgoing: true,
   },

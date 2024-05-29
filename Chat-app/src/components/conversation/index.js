@@ -1,7 +1,12 @@
 import React from "react";
 import Chatheader from "./chatHeader";
 import Chatfooter from "./chatFooter";
-import Message, { MessageImg,MessageLink } from "./messages";
+import Message, {
+  MessageDoc,
+  MessageImg,
+  MessageLink,
+  MessageReply,
+} from "./messages";
 import { Chat_History } from "../../data/index";
 import { Stack, Box, Divider } from "@mui/material";
 import { useTheme } from "@emotion/react";
@@ -49,13 +54,13 @@ export default function Conversation() {
                     case "img":
                       return <MessageImg {...el} />;
                     case "doc":
-                      return <>Document</>;
+                      return <MessageDoc {...el} />;
                     case "link":
-                      return <MessageLink {...el}/>;
+                      return <MessageLink {...el} />;
                     case "reply":
-                      return <>Reply</>;
+                      return <MessageReply {...el} />;
                     default:
-                      return <Message {...el} />;
+                      return <Message {...el} />; //If none of these that means it is simple message
                   }
 
                 case "divider":
@@ -63,7 +68,7 @@ export default function Conversation() {
                     <Divider orientation={"horizontal"}>{el.text}</Divider>
                   );
                 default:
-                  return <>Default</>;
+                  return <Box sx={{ backgroundColor: "red" }}>DEFAULT</Box>;
               }
             })}
           </Stack>
