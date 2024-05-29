@@ -32,7 +32,6 @@ export default function Conversation() {
         sx={{
           height: "100%",
           width: "91%",
-          backgroundColor:'black'
           
         }}>
           {Chat_History.map((el) => {
