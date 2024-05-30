@@ -26,7 +26,10 @@ function Message(props) {
     </Stack>
   );
 }
+ 
 
+
+// dd
 const MessageImg = (props) => {
   return (
     <Stack alignItems={props.incoming === true ? "start" : "end"} sx={{}}>
