@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
+  Paper,
   IconButton,
   InputAdornment,
   Stack,
@@ -9,6 +10,8 @@ import {
 } from "@mui/material";
 import { Link, Smiley, PaperPlaneTilt } from "phosphor-react";
 import { useTheme } from "@mui/material";
+import data from "@emoji-mart/data";
+import Picker from "@emoji-mart/react";
 
 const StyleField = styled(TextField)(({ theme }) => ({
   "& .MuiInputBase-input": {
@@ -19,6 +22,8 @@ const StyleField = styled(TextField)(({ theme }) => ({
 
 function Chatfooter() {
   const theme = useTheme();
+  const [emojiOpen, emojiStatus] = useState(false);
+
   return (
     <Box
       position={"relative"}
@@ -50,7 +55,12 @@ function Chatfooter() {
             ),
             endAdornment: (
               <InputAdornment>
-                <IconButton>
+                <Stack position={"relative"} display={emojiOpen ? "inline-block" : "none"} sx={{bottom:250,left:150}}>
+                <Paper elevation={0}>
+                <Picker data={data} onEmojiSelect={console.log} theme={theme.palette.mode}/>
+                </Paper>
+                </Stack>
+                <IconButton onClick={() => emojiStatus((prev) => !prev)}>
                   <Smiley
                     color={theme.palette.mode === "light" ? "#000" : "#fff"}
                     size={28}
