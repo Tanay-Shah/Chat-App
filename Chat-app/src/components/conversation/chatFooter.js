@@ -5,10 +5,20 @@ import {
   IconButton,
   InputAdornment,
   Stack,
+  SpeedDial,
+  SpeedDialIcon,
+  SpeedDialAction,
   TextField,
   styled,
 } from "@mui/material";
-import { Link, Smiley, PaperPlaneTilt } from "phosphor-react";
+import {
+  Smiley,
+  PaperPlaneTilt,
+  File,
+  User,
+  Camera,
+  Image,
+} from "phosphor-react";
 import { useTheme } from "@mui/material";
 import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
@@ -19,6 +29,25 @@ const StyleField = styled(TextField)(({ theme }) => ({
     paddingBottom: "12px",
   },
 }));
+
+const Message_Attachment = [
+  {
+    title: "Contact",
+    comp: <User size={30} />,
+  },
+  {
+    title: "Document",
+    comp: <File size={30} />,
+  },
+  {
+    title: "Camera",
+    comp: <Camera size={30} />,
+  },
+  {
+    title: "Image",
+    comp: <Image size={30} />,
+  },
+];
 
 function Chatfooter() {
   const theme = useTheme();
@@ -45,20 +74,37 @@ function Chatfooter() {
             disableUnderline: true,
             startAdornment: (
               <InputAdornment>
-                <IconButton>
-                  <Link
-                    color={theme.palette.mode === "light" ? "#000" : "#fff"}
-                    size={28}
-                  />
-                </IconButton>
+                <Stack position={"relative"} right={45} bottom={120}>
+                  <SpeedDial
+                    sx={{ boxShadow: "none" }}
+                    ariaLabel="random"
+                    icon={<SpeedDialIcon />}
+                  >
+                    {Message_Attachment.map((action) => (
+                      <SpeedDialAction
+                        key={action.title}
+                        icon={action.comp}
+                        tooltipTitle={action.title}
+                      />
+                    ))}
+                  </SpeedDial>
+                </Stack>
               </InputAdornment>
             ),
             endAdornment: (
               <InputAdornment>
-                <Stack position={"relative"} display={emojiOpen ? "inline-block" : "none"} sx={{bottom:250,left:150}}>
-                <Paper elevation={0}>
-                <Picker data={data} onEmojiSelect={console.log} theme={theme.palette.mode}/>
-                </Paper>
+                <Stack
+                  position={"relative"}
+                  display={emojiOpen ? "inline-block" : "none"}
+                  sx={{ bottom: 250, left: 150 }}
+                >
+                  <Paper elevation={0}>
+                    <Picker
+                      data={data}
+                      onEmojiSelect={console.log}
+                      theme={theme.palette.mode}
+                    />
+                  </Paper>
                 </Stack>
                 <IconButton onClick={() => emojiStatus((prev) => !prev)}>
                   <Smiley
