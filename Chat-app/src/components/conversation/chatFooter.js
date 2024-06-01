@@ -76,7 +76,6 @@ function Chatfooter() {
               <InputAdornment>
                 <Stack position={"relative"} right={45} bottom={120}>
                   <SpeedDial
-                    sx={{ boxShadow: "none" }}
                     ariaLabel="random"
                     icon={<SpeedDialIcon />}
                   >
