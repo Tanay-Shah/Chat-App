@@ -1,16 +1,60 @@
 import React from "react";
-import { Box, Stack, Card, Link } from "@mui/material";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import { Message_options } from "../../data";
+import { Box, Stack, Card, Link, IconButton } from "@mui/material";
 import {
   Typography,
   CardActionArea,
   CardMedia,
   CardContent,
 } from "@mui/material";
-import { ArrowLineDown, Image } from "phosphor-react";
+import { ArrowLineDown, Image, DotsThreeVertical } from "phosphor-react";
+
+function ThreeDots() {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  return (
+    <>
+      <IconButton
+        id="basic-button"
+        aria-controls={open ? "basic-menu" : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? "true" : undefined}
+        onClick={handleClick}
+      >
+        <DotsThreeVertical size={25} />
+      </IconButton>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          "aria-labelledby": "basic-button",  
+        }}
+      >
+        {Message_options.map((el) => (
+          <MenuItem onClick={handleClose}>{el.title}</MenuItem>
+        ))}
+      </Menu>
+    </>
+  );
+}
 
 function Message(props) {
   return (
-    <Stack alignItems={props.incoming === true ? "start" : "end"} sx={{}}>
+    <Stack
+      direction={"row"}
+      justifyContent={props.incoming === true ? "start" : "end"}
+    >
       <Box
         p={2}
         sx={{
@@ -23,6 +67,7 @@ function Message(props) {
       >
         <Typography> {props.message} </Typography>
       </Box>
+      <ThreeDots />
     </Stack>
   );
 }
