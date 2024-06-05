@@ -29,8 +29,9 @@ function ThreeDots() {
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
+        sx={{position:'relative' , right:15,bottom:17}}
       >
-        <DotsThreeVertical size={24} />
+        <DotsThreeVertical color="black" size={27} />
       </IconButton>
       <Menu
         id="basic-menu" 
