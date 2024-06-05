@@ -30,10 +30,10 @@ function ThreeDots() {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <DotsThreeVertical size={25} />
+        <DotsThreeVertical size={24} />
       </IconButton>
       <Menu
-        id="basic-menu"
+        id="basic-menu" 
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
