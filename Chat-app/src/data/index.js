@@ -51,7 +51,7 @@ const ChatList = [
     id: 0,
     img: faker.image.avatar(),
     name: faker.name.firstName(),
-    msg: faker.lorem.words(49),
+    msg: faker.lorem.words(50),
     time: "9:36",
     unread: 0,
     pinned: true,
