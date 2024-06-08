@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter} from 'react-router-dom';
 import Setting from './contexs/setting';
+import {Provider} from 'react-redux'
+import {store} from './redux/store'
 
 
 
@@ -14,7 +16,9 @@ root.render(
   <React.StrictMode>
   {/* Setting is a custom wrapper component Which is used for Maintain Neat and clean Code (CONTEX API CODEBASE)*/}
   <Setting>
-    <App/>
+  <Provider store={store}>
+  <App/>
+  </Provider>
     </Setting>
   </React.StrictMode>
   </BrowserRouter>
