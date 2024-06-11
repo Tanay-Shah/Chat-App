@@ -6,17 +6,21 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import Setting from "./contexs/setting";
 import { Provider } from "react-redux";
-import {store} from './redux/store'
+import { store } from "./redux/store";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistor } from "./redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
       <Provider store={store}>
-        {/* Setting is a custom wrapper component Which is used for Maintain Neat and clean Code (CONTEX API CODEBASE)*/}
-        <Setting>
-          <App />
-        </Setting>
+        <PersistGate loading={null} persistor={persistor}>
+          {/* Setting is a custom wrapper component Which is used for Maintain Neat and clean Code (CONTEX API CODEBASE)*/}
+          <Setting>
+            <App />
+          </Setting>
+        </PersistGate>
       </Provider>
     </React.StrictMode>
   </BrowserRouter>

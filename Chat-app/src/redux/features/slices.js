@@ -10,12 +10,11 @@ export const slice = createSlice({
   initialState,
   reducers: {
     toggleSidebar: (state, action) => {
-      state.open = !state.open
-      state.type = action.payload.type
+      state.open = !state.open;
+      state.type = action.payload.type;
     },
   },
 });
-
 
 //slice.actions contains all the reducers
 
