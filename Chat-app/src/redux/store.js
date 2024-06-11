@@ -15,16 +15,22 @@ const rootReducer = combineReducers({
     // Add more reducers here
   });
 
+
+  // Create a persisted reducer
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+
+
+// Configure the store with the persisted reducer
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: false,
+      serializableCheck: false,// Disable serializable state invariant middleware
     }),
 });
 
+// Create a persistor
 const persistor = persistStore(store);
 
 export { persistor };
