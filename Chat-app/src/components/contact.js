@@ -1,27 +1,22 @@
 import React from "react";
 import { Box, Button } from "@mui/material";
-import { useSelector ,useDispatch} from "react-redux";
-import {toggleSidebar} from '../redux/features/slices'
-import {username} from '../var.js'
+import { useDispatch, useSelector } from "react-redux";
+import { toggleSidebar } from "../redux/features/slices";
 
-const Contact = () => {
-  // const open = useSelector(state=>state.slice)
-  const dispatch=useDispatch();
+const Contact = () => { 
+  // const state = useSelector((state) => state.app);
+  const dispatch = useDispatch();
 
-  console.log(username);
-
-
-  function handleToggle(action){
-    dispatch(toggleSidebar(action))
+ 
+  function handleToggle(action) {
+    dispatch(toggleSidebar({type:action}));
   }
 
   return (
     <Box sx={{ height: "100%", width: 320, backgroundColor: "red" }}>
-    <Button onClick={()=>handleToggle('IMAGE')}>CLICK ME</Button>
-    {username}
+      <Button onClick={() => handleToggle("IMAGE")}>CLICK ME</Button>
     </Box>
   );
 };
-
 
 export default Contact;

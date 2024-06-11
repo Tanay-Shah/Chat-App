@@ -1,10 +1,9 @@
-import {configureStore} from '@reduxjs/toolkit'
-import sliceReducers from './features/slices'
-// import { useDispatch,useSelector } from 'react-redux'
-// import {persistStore,persistReducer} from 'react-persist'
+import { configureStore } from "@reduxjs/toolkit";
+import sliceReducer from './features/slices'
 
-export const store= configureStore({
+
+export const store=configureStore({
     reducer:{
-        slice:sliceReducers,
-    }
+        app:sliceReducer,
+    }   
 })

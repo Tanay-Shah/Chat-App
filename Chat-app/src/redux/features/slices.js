@@ -2,19 +2,22 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   open: false,
-  type: "contact" // image , link , docs
+  type: "contact", //DOCS , IMAGE ...
 };
 
-export const Slice = createSlice({
+export const slice = createSlice({
   name: "app",
   initialState,
   reducers: {
     toggleSidebar: (state, action) => {
       state.open = !state.open
-      state.type = action.payload
+      state.type = action.payload.type
     },
-  }
-})
+  },
+});
 
-export const {toggleSidebar} = Slice.actions
-export default Slice.reducer
+
+//slice.actions contains all the reducers
+
+export const { toggleSidebar } = slice.actions;
+export default slice.reducer;
