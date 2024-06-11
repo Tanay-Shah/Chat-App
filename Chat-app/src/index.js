@@ -7,20 +7,17 @@ import { BrowserRouter } from "react-router-dom";
 import Setting from "./contexs/setting";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-import { PersistGate } from "redux-persist/integration/react";
-import { persistor } from "./redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
+      {/* here No need to use persistGate. Provider from redux took handles all the tasks */}
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          {/* Setting is a custom wrapper component Which is used for Maintain Neat and clean Code (CONTEX API CODEBASE)*/}
-          <Setting>
-            <App />
-          </Setting>
-        </PersistGate>
+        {/* Setting is a custom wrapper component Which is used for Maintain Neat and clean Code (CONTEX API CODEBASE)*/}
+        <Setting>
+          <App />
+        </Setting>
       </Provider>
     </React.StrictMode>
   </BrowserRouter>

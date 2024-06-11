@@ -8,19 +8,19 @@ const Contact = () => {
   const state = useSelector((state) => state.slice1);
   const dispatch = useDispatch();
 
-  function handleToggle(action) {
-    dispatch(toggleSidebar({ type: action }));
+  function handleToggle() {
+    dispatch(toggleSidebar());
   }
 
   return (
     <Box sx={{ height: "100%", width: 320, backgroundColor: "red" }}>
       <Button
         sx={{ backgroundColor: "black" }}
-        onClick={() => handleToggle("IMAGE")}
+        onClick={() => handleToggle()}
       >
         CLICK
       </Button>
-      {state.open.toString()} {state.type}
+      {state.sidebar.open.toString()} {state.sidebar.type}
     </Box>
   );
 };
