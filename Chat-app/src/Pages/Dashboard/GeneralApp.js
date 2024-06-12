@@ -19,6 +19,8 @@ export default function GeneralApp() {
 
       {/* Contact info */}
       <Contact />
+
+      
     </Stack>
   );
 }
