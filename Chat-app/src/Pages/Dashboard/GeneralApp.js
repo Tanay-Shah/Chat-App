@@ -3,8 +3,12 @@ import Chat from "./chat";
 import { Box, Stack } from "@mui/material";
 import Conversation from "../../components/conversation";
 import Contact from "../../components/contact";
+import { useSelector } from "../../redux/store";
 
 export default function GeneralApp() {
+  const appState = useSelector(state => state.slice1);
+  console.log(appState.sidebar.open);
+
   return (
     <Stack direction="row" sx={{ width: "100%" }}>
       {/* Chats */}
@@ -13,14 +17,19 @@ export default function GeneralApp() {
       </Stack>
 
       {/* Conversation */}
-      <Box sx={{ height: "100%", width: "calc(100vw - 750px)" }}>
+      <Box
+        sx={{
+          height: "100%",
+          width: appState.sidebar.open
+            ? "calc(100vw - 750px)"
+            : "calc(100vw - 430px)"
+        }}
+      >
         <Conversation />
       </Box>
 
       {/* Contact info */}
-      <Contact />
-
-      
+      {appState.sidebar.open ? <Contact /> : ""}
     </Stack>
   );
 }

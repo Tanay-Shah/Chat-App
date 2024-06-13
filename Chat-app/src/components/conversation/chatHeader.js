@@ -7,10 +7,11 @@ import {
   Typography,
   Box,
   Divider,
-  IconButton,
+  IconButton
 } from "@mui/material";
 import { MagnifyingGlass, Phone, VideoCamera, CaretDown } from "phosphor-react";
 import { useTheme } from "@mui/material";
+import { ToogleSidebar } from "../../redux/features/slices";
 
 const Chatheader = () => {
   const theme = useTheme();
@@ -23,10 +24,17 @@ const Chatheader = () => {
         width: "100%",
         backgroundColor: theme.palette.background.paper,
         justifyContent: "space-between",
-        boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.1)",
+        boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.1)"
       }}
     >
-      <Stack direction={"row"} spacing={2} alignItems={"center"} p={6}>
+      <Stack
+        sx={{ cursor: "pointer" }}
+        onClick={ToogleSidebar()}
+        direction={"row"}
+        spacing={2}
+        alignItems={"center"}
+        p={6}
+      >
         <StyledBadge
           overlap="circular"
           anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
