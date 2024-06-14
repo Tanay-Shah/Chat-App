@@ -40,7 +40,7 @@ const Chatheader = () => {
           anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
           variant="dot"
         >
-          <Avatar src={faker.image.avatar()} />
+          <Avatar src={faker.image.avatar()}/>
         </StyledBadge>
         <Box>
           <Typography variant="subtitle1" fontWeight={600}>
