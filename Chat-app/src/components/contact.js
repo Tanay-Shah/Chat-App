@@ -8,40 +8,59 @@ import {
   IconButton,
   Stack,
   Typography,
-  useTheme
+  useTheme,
 } from "@mui/material";
-import { VideoCamera, Phone, SignOut, CaretRight } from "phosphor-react";
+import {
+  VideoCamera,
+  Phone,
+  CaretRight,
+  Star,
+  Bell,
+  Prohibit,
+  Trash,
+  X,
+} from "phosphor-react";
 import { ToogleSidebar } from "../redux/features/slices";
+import { AntSwitch } from "./switch";
 
 const Contact = () => {
   const theme = useTheme();
   return (
-    <Box sx={{ height: "100%", width: 320, border: 1, borderColor: "red" }}>
+    <Box sx={{ height: "100%", width: 320 }}>
       {/* Header */}
       <Stack
-        sx={{ width: "max-width", height: 100 }}
+        pl={3}
+        pr={3}
+        sx={{
+          width: "max-width",
+          height: 90,
+          boxShadow: "0px 0.3px 8px rgba(0, 0, 0, 0.3)",
+        }}
         direction={"row"}
         spacing={3}
         alignItems={"center"}
-        justifyContent={"center"}
+        justifyContent={"space-between"}
       >
-        <Typography variant="h6" fontWeight={550}>
+        <Typography variant="subtitle1" fontWeight={550}>
           Contact Info
         </Typography>
         <IconButton onClick={ToogleSidebar()}>
-          <SignOut
+          <X
             color={theme.palette.mode === "light" ? "#000" : "#fff"}
-            size={30}
+            size={25}
           />
         </IconButton>
       </Stack>
 
       {/* Details */}
-      <Stack pl={3} pr={3} sx={{ width: "max-width" }} spacing={2}>
+      <Stack pt={2} pl={3} pr={3} sx={{ width: "max-width" }} spacing={2}>
         {/* INFO */}
         <Stack spacing={2} alignItems={"center"} p={2}>
           <Box display={"flex"} alignItems={"center"}>
-            <Avatar sx={{ mr: 2, width: 56, height: 56 }} />
+            <Avatar
+              sx={{ mr: 2, width: 56, height: 56 }}
+              src={faker.image.avatar()}
+            />
             <Typography variant="subtitle1" fontWeight={600}>
               Tanay Shah <br />{" "}
               <Typography variant="subtitle1">+91 835707065</Typography>
@@ -105,11 +124,12 @@ const Contact = () => {
           </Stack>
           <Stack direction={"row"} spacing={2} justifyContent={"space-evenly"}>
             {/* Mapping over an array to render multiple images */}
-            {[1, 2, 3].map(el => {
+            {[1, 2, 3].map((el) => {
               // Ensure correct path to the image file
               return (
                 <Box height={80} width={80}>
-                  {" "}<img
+                  {" "}
+                  <img
                     key={el}
                     src={faker.image.abstract()}
                     alt="Hey"
@@ -124,6 +144,82 @@ const Contact = () => {
         <Box>
           <Divider />
         </Box>
+        {/* Started */}
+        <Stack
+          direction={"row"}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+        >
+          <Stack direction={"row"} spacing={1} alignItems={"center"}>
+            <Star size={20} />
+            <Typography variant="subtitle1" fontWeight={550}>
+              Starred Messages
+            </Typography>
+          </Stack>
+          <CaretRight size={20} />
+        </Stack>
+
+        <Box>
+          <Divider />
+        </Box>
+
+        {/* mute message */}
+        <Stack
+          direction={"row"}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+        >
+          <Stack direction={"row"} spacing={1} alignItems={"center"}>
+            <Bell size={20} />
+            <Typography variant="subtitle1" fontWeight={550}>
+              Mute Notifications
+            </Typography>
+          </Stack>
+          <AntSwitch />
+        </Stack>
+
+        <Box>
+          <Divider />
+        </Box>
+        {/* Muutual group */}
+
+        <Stack spacing={2}>
+          <Typography variant="article">1 group in common</Typography>
+          <Box display={"flex"} alignItems={"center"}>
+            <Avatar
+              sx={{ mr: 2, width: 46, height: 46 }}
+              src={faker.image.avatar()}
+            />
+            <Typography variant="subtitle1" fontWeight={600}>
+              Coding Monk <br />{" "}
+              <Typography variant="subtitle1">
+                Owl, Parrot, Rabbit, You
+              </Typography>
+            </Typography>
+          </Box>
+
+          <Stack direction={"row"} justifyContent={"space-evenly"}>
+            <Button
+              variant="outlined"
+              sx={{ borderRadius: 2 }}
+              startIcon={<Prohibit size={20} />}
+            >
+              {" "}
+              <Typography variant="body" fontWeight={550}>
+                Block
+              </Typography>
+            </Button>
+            <Button
+              variant="outlined"
+              sx={{ borderRadius: 2 }}
+              startIcon={<Trash size={20} />}
+            >
+              <Typography variant="body" fontWeight={550}>
+                Delete
+              </Typography>
+            </Button>
+          </Stack>
+        </Stack>
       </Stack>
     </Box>
   );

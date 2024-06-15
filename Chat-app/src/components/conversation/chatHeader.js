@@ -7,7 +7,7 @@ import {
   Typography,
   Box,
   Divider,
-  IconButton
+  IconButton,
 } from "@mui/material";
 import { MagnifyingGlass, Phone, VideoCamera, CaretDown } from "phosphor-react";
 import { useTheme } from "@mui/material";
@@ -20,11 +20,10 @@ const Chatheader = () => {
       position={"relative"}
       direction={"row"}
       sx={{
-        height: 100,
+        height: 90,
         width: "100%",
         backgroundColor: theme.palette.background.paper,
         justifyContent: "space-between",
-        boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.1)"
       }}
     >
       <Stack
@@ -40,7 +39,7 @@ const Chatheader = () => {
           anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
           variant="dot"
         >
-          <Avatar src={faker.image.avatar()}/>
+          <Avatar src={faker.image.avatar()} />
         </StyledBadge>
         <Box>
           <Typography variant="subtitle1" fontWeight={600}>
