@@ -7,7 +7,7 @@ import { useSelector } from "../../redux/store";
 
 export default function GeneralApp() {
   const appState = useSelector(state => state.slice1);
-  console.log(appState.sidebar.open);
+ 
 
   return (
     <Stack direction="row" sx={{ width: "100%" }}>

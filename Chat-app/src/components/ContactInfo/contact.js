@@ -22,9 +22,13 @@ import {
 } from "phosphor-react";
 import { ToogleSidebar } from "../../redux/features/slices";
 import { AntSwitch } from "../switch";
+import { useSelector } from "../../redux/store";
 
 const Contact = () => {
+  const Appstate=useSelector(state=>state.slice1)
   const theme = useTheme();
+
+  console.log(Appstate);
   return (
     <Box sx={{ height: "100%", width: 320 }}>
 
