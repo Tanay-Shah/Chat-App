@@ -20,13 +20,15 @@ import {
   Trash,
   X,
 } from "phosphor-react";
-import { ToogleSidebar } from "../redux/features/slices";
-import { AntSwitch } from "./switch";
+import { ToogleSidebar } from "../../redux/features/slices";
+import { AntSwitch } from "../switch";
 
 const Contact = () => {
   const theme = useTheme();
   return (
     <Box sx={{ height: "100%", width: 320 }}>
+
+
       {/* Header */}
       <Stack
         pl={3}
@@ -52,7 +54,9 @@ const Contact = () => {
         </IconButton>
       </Stack>
 
+
       {/* Details */}
+      
       <Stack pt={2} pl={3} pr={3} sx={{ width: "max-width" }} spacing={2}>
         {/* INFO */}
         <Stack spacing={2} alignItems={"center"} p={2}>
@@ -221,6 +225,8 @@ const Contact = () => {
           </Stack>
         </Stack>
       </Stack>
+
+
     </Box>
   );
 };

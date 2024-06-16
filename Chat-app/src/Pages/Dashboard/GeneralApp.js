@@ -2,7 +2,7 @@ import React from "react";
 import Chat from "./chat";
 import { Box, Stack } from "@mui/material";
 import Conversation from "../../components/conversation";
-import Contact from "../../components/contact";
+import Contact from "../../components/ContactInfo/contact";
 import { useSelector } from "../../redux/store";
 
 export default function GeneralApp() {
