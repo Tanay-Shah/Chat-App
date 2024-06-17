@@ -29,6 +29,7 @@ export default function GeneralApp() {
       </Box>
 
       {/* Contact info */}
+      {/* Immediately Invoked Function Expressions (IIFE) */}
       {appState.sidebar.open &&
         (function() {
           switch (appState.sidebar.type) {
