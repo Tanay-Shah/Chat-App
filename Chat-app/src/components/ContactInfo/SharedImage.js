@@ -47,7 +47,6 @@ function SharedImage() {
         </Tabs>
       </Box>
 
-
       {/* Immediately Inkvoke Funtion Expression */}
       {(() => {
         switch (value) {
@@ -62,8 +61,6 @@ function SharedImage() {
             break;
         }
       })()}
-
-
     </Box>
   );
 }
