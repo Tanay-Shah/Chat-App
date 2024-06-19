@@ -74,6 +74,7 @@ function Message(props) {
 }
 
 const MessageImg = (props) => {
+  console.log(props);
   return (
     <Stack alignItems={props.incoming === true ? "start" : "end"} sx={{}}>
       <Card

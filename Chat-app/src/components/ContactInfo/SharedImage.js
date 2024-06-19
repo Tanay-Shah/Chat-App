@@ -1,8 +1,9 @@
-import { useTheme, Tabs, Tab } from "@mui/material";
+import { useTheme, Tabs, Tab, Grid } from "@mui/material";
 import React from "react";
-import { Stack, Typography, IconButton, Box } from "@mui/material";
+import { Stack, Typography, IconButton, Box, CardMedia } from "@mui/material";
 import { UpdateSidebar } from "../../redux/features/slices";
 import { CaretLeft } from "phosphor-react";
+import { faker } from "@faker-js/faker";
 
 function SharedImage() {
   const theme = useTheme();
@@ -51,7 +52,22 @@ function SharedImage() {
       {(() => {
         switch (value) {
           case 0:
-            return "Image";
+            return (
+              <Grid container spacing={2} pt={4}>
+                {[0, 1, 2, 3, 4, 5, 6].map((el) => {
+                  return (
+                    <Grid key={el} item xl={4}>
+                      <CardMedia
+                        component="img"
+                        height="auto"
+                        image={faker.image.food()}
+                        alt="IMAGE"
+                      />
+                    </Grid>
+                  );
+                })}
+              </Grid>
+            );
           case 1:
             return "Links";
           case 2:
