@@ -8,7 +8,7 @@ import {
   IconButton,
   Stack,
   Typography,
-  useTheme
+  useTheme,
 } from "@mui/material";
 import {
   VideoCamera,
@@ -18,20 +18,19 @@ import {
   Bell,
   Prohibit,
   Trash,
-  X
+  X,
 } from "phosphor-react";
 import { ToogleSidebar, UpdateSidebar } from "../../redux/features/slices";
 import { AntSwitch } from "../switch";
 import { useSelector } from "../../redux/store";
+import { SlimScrollbarStack } from "../search";
 
 const Contact = () => {
-  const Appstate = useSelector(state => state.slice1);
+  const Appstate = useSelector((state) => state.slice1);
   const theme = useTheme();
 
-  console.log(Appstate);
   return (
-    <Box sx={{ height: "100%", width: 320 }}>
-    
+    <Box sx={{ height: "100vh", width: 320, backgroundColor: "lightgreen" }}>
       {/* Header */}
       <Stack
         pl={3}
@@ -39,7 +38,7 @@ const Contact = () => {
         sx={{
           width: "max-width",
           height: 90,
-          boxShadow: "0px 0.3px 8px rgba(0, 0, 0, 0.3)"
+          boxShadow: "0px 0.3px 8px rgba(0, 0, 0, 0.3)",
         }}
         direction={"row"}
         spacing={3}
@@ -58,7 +57,16 @@ const Contact = () => {
       </Stack>
 
       {/* Details */}
-      <ContactInfo Appstate={Appstate} theme={theme} />
+      <SlimScrollbarStack
+        sx={{
+          flexGrow: 1,
+          overflow: "scroll",
+        }}
+      >
+        <Stack sx={{ height: "85vh" }}>
+          <ContactInfo Appstate={Appstate} theme={theme} />
+        </Stack>
+      </SlimScrollbarStack>
     </Box>
   );
 };
@@ -141,11 +149,12 @@ function ContactInfo({ Appstate, theme }) {
         </Stack>
         <Stack direction={"row"} spacing={2} justifyContent={"space-evenly"}>
           {/* Mapping over an array to render multiple images */}
-          {[1, 2, 3].map(el => {
+          {[1, 2, 3].map((el) => {
             // Ensure correct path to the image file
             return (
               <Box height={80} width={80}>
-                {" "}<img
+                {" "}
+                <img
                   key={el}
                   src={faker.image.abstract()}
                   alt="Hey"
@@ -214,13 +223,14 @@ function ContactInfo({ Appstate, theme }) {
           </Typography>
         </Box>
 
-        <Stack direction={"row"} justifyContent={"space-evenly"}>
+        <Stack direction={"row"} pb={2} justifyContent={"space-evenly"}>
           <Button
             variant="outlined"
             sx={{ borderRadius: 2 }}
             startIcon={<Prohibit size={20} />}
           >
-            {" "}<Typography variant="body" fontWeight={550}>
+            {" "}
+            <Typography variant="body" fontWeight={550}>
               Block
             </Typography>
           </Button>

@@ -4,13 +4,13 @@ import { Box, Stack } from "@mui/material";
 import Conversation from "../../components/conversation";
 import Contact from "../../components/ContactInfo/contact";
 import { useSelector } from "../../redux/store";
-import SharedImage from "../../components/ContactInfo/SharedImage";
+import SharedMessages from "../../components/ContactInfo/SharedMesages";
 
 export default function GeneralApp() {
   const appState = useSelector(state => state.slice1);
 
   return (
-    <Stack direction="row" sx={{ width: "100%" }}>
+    <Stack direction="row" sx={{ width: "100%" , height:'100vh'}}>
       {/* Chats */}
       <Stack maxWidth={320}>
         <Chat />
@@ -36,7 +36,7 @@ export default function GeneralApp() {
             case "contact":
               return <Contact />;
             case "Image":
-              return <SharedImage />;
+              return <SharedMessages />;
             case "docs":
               break;
             default:

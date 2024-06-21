@@ -255,7 +255,7 @@ const Shared_docs = [
     type: "msg",
     subtype: "doc",
     message: "Yes sure, here you go.",
-    incoming: true,
+    incoming: false,
     outgoing: false,
   },
   {
@@ -302,7 +302,7 @@ const Shared_links = [
     type: "msg",
     subtype: "link",
     preview: faker.image.cats(),
-    message: "Yep, I can also do that",
+    message: "https://www.youtube.com/",
     incoming: true,
     outgoing: false,
   },
@@ -438,6 +438,7 @@ const CallList = [
     missed: false,
   },
 ];
+
 
 export {
   Profile_Menu,

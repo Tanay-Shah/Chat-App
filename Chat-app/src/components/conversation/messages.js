@@ -29,17 +29,17 @@ function ThreeDots() {
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
-        sx={{position:'relative' , right:15,bottom:17}}
+        sx={{ position: "relative", right: 15, bottom: 17 }}
       >
         <DotsThreeVertical color="black" size={27} />
       </IconButton>
       <Menu
-        id="basic-menu" 
+        id="basic-menu"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
         MenuListProps={{
-          "aria-labelledby": "basic-button",  
+          "aria-labelledby": "basic-button",
         }}
       >
         {Message_options.map((el) => (
@@ -74,7 +74,6 @@ function Message(props) {
 }
 
 const MessageImg = (props) => {
-  console.log(props);
   return (
     <Stack alignItems={props.incoming === true ? "start" : "end"} sx={{}}>
       <Card
