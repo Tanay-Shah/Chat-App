@@ -16,16 +16,15 @@ export default function Conversation() {
   const theme = useTheme();
 
   return (
-    <Box height={"100%"} maxHeight={"100vh"} width={"auto"} flexGrow={1}>
+    <Box maxHeight={"100vh"} width={"auto"} flexGrow={1}>
       {/* Chats Header */}
       <Chatheader />
 
       {/* Msg */}
 
       <Stack
-        position={"relative"}
         sx={{
-          height: "calc(100vh - 200px)",
+          height: "calc(100vh - 186px)",
           width: "100%",
           backgroundColor: theme.palette.background.paper,
         }}
@@ -33,7 +32,6 @@ export default function Conversation() {
         <SlimScrollbarStack
           sx={{
             flexGrow: 1,
-            height: "100%",
             overflow: "scroll",
           }}
         >

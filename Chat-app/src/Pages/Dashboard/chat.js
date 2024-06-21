@@ -101,7 +101,7 @@ function Chat() {
               : theme.palette.background.paper,
         }}
       >
-        <Stack p={3} spacing={2} sx={{ height: "94vh" }}>
+        <Stack pl={3} pr={3} pt={3} spacing={2} sx={{ height: 'calc(100vh - 24px)'  }}>
           <Stack
             direction="row"
             justifyContent="space-between"

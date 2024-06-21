@@ -33,13 +33,13 @@ export default function DashboardLayout() {
   };
 
   return (
-    <Stack direction="row">
+    <Stack direction="row" height={"100vh"}>
       <Box
         p={2}
         sx={{
           backgroundColor: theme.palette.background.paper,
           boxShadow: "0px 0px 2px rgba(0,0,0,0.25)",
-          height: "95vh", /////DO CHECK 95VH
+          height: "calc(100vh - 32px)",
           width: 100,
         }}
       >
@@ -209,7 +209,6 @@ export default function DashboardLayout() {
                 horizontal: "left",
               }}
             >
-            
               <MenuItem onClick={handleClose}>Profile</MenuItem>
               <MenuItem onClick={handleClose}>My account</MenuItem>
               <MenuItem onClick={handleClose}>Logout</MenuItem>

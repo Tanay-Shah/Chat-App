@@ -7,10 +7,10 @@ import { useSelector } from "../../redux/store";
 import SharedMessages from "../../components/ContactInfo/SharedMesages";
 
 export default function GeneralApp() {
-  const appState = useSelector(state => state.slice1);
+  const appState = useSelector((state) => state.slice1);
 
   return (
-    <Stack direction="row" sx={{ width: "100%" , height:'100vh'}}>
+    <Stack direction="row" sx={{ width: "100%", height: "100vh" }}>
       {/* Chats */}
       <Stack maxWidth={320}>
         <Chat />
@@ -22,7 +22,7 @@ export default function GeneralApp() {
           height: "100%",
           width: appState.sidebar.open
             ? "calc(100vw - 750px)"
-            : "calc(100vw - 430px)"
+            : "calc(100vw - 430px)",
         }}
       >
         <Conversation />
@@ -31,7 +31,7 @@ export default function GeneralApp() {
       {/* Contact info */}
       {/* Immediately Invoked Function Expressions (IIFE) */}
       {appState.sidebar.open &&
-        (function() {
+        (function () {
           switch (appState.sidebar.type) {
             case "contact":
               return <Contact />;
@@ -43,9 +43,6 @@ export default function GeneralApp() {
               break;
           }
         })()}
-
-
-        
     </Stack>
   );
 }

@@ -30,14 +30,14 @@ const Contact = () => {
   const theme = useTheme();
 
   return (
-    <Box sx={{ height: "100vh", width: 320, backgroundColor: "lightgreen" }}>
+    <Box sx={{ height: "100vh", width: 320}}>
       {/* Header */}
       <Stack
         pl={3}
         pr={3}
         sx={{
           width: "max-width",
-          height: 90,
+          height: "90px",
           boxShadow: "0px 0.3px 8px rgba(0, 0, 0, 0.3)",
         }}
         direction={"row"}
@@ -59,11 +59,10 @@ const Contact = () => {
       {/* Details */}
       <SlimScrollbarStack
         sx={{
-          flexGrow: 1,
           overflow: "scroll",
         }}
       >
-        <Stack sx={{ height: "85vh" }}>
+        <Stack sx={{ height: "calc(100vh - 111px)" }}>
           <ContactInfo Appstate={Appstate} theme={theme} />
         </Stack>
       </SlimScrollbarStack>
