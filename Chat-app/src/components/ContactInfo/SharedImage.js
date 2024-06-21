@@ -5,7 +5,7 @@ import { UpdateSidebar } from "../../redux/features/slices";
 import { CaretLeft } from "phosphor-react";
 import { faker } from "@faker-js/faker";
 
-function SharedImage() {
+function SharedMessages() {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
@@ -52,22 +52,7 @@ function SharedImage() {
       {(() => {
         switch (value) {
           case 0:
-            return (
-              <Grid container spacing={2} pt={4}>
-                {[0, 1, 2, 3, 4, 5, 6].map((el) => {
-                  return (
-                    <Grid key={el} item xl={4}>
-                      <CardMedia
-                        component="img"
-                        height="auto"
-                        image={faker.image.food()}
-                        alt="IMAGE"
-                      />
-                    </Grid>
-                  );
-                })}
-              </Grid>
-            );
+            return (<SharedImages/>);
           case 1:
             return "Links";
           case 2:
@@ -81,4 +66,21 @@ function SharedImage() {
   );
 }
 
-export default SharedImage;
+function  SharedImages(){
+  return( <Grid container spacing={2} pt={4}>
+    {[0, 1, 2, 3, 4, 5, 6].map((el) => {
+      return (
+        <Grid key={el} item xl={4}>
+          <CardMedia
+            component="img"
+            height="auto"
+            image={faker.image.food()}
+            alt="IMAGE"
+          />
+        </Grid>
+      );
+    })}
+  </Grid>)
+}
+
+export default SharedMessages;
