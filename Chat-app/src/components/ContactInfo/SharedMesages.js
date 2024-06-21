@@ -120,11 +120,11 @@ function SharedDocs() {
   return (
     <SlimScrollbarStack
       sx={{
-        height: "calc(100vh - 136px)",
+        height: "calc(100vh - 138px)",
         overflow: "scroll",
       }}
     >
-      <Stack spacing={2} p={2} sx={{ backgroundColor: "red" }}>
+      <Stack spacing={2} pl={2} pr={2} mt={2} >
         {Shared_docs.map((el) => {
           return (
             <Stack alignItems={el.incoming === true ? "start" : "end"} sx={{}}>
