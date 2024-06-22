@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import {
   Avatar,
   Box,
@@ -17,6 +17,8 @@ import { faker } from "@faker-js/faker";
 import { AntSwitch } from "../../components/switch";
 import { Contex } from "../../contexs/setting";
 import Chat from "../../Pages/Dashboard/chat";
+import PageDefault from "../../Pages/PageDefault";
+import { PATH_DASHBOARD } from "../../Routes/paths";
 
 export default function DashboardLayout() {
   const { onToggle, themeMode } = useContext(Contex);
@@ -32,9 +34,11 @@ export default function DashboardLayout() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const navigate = useNavigate();
 
   return (
     <Stack direction="row" height={"100vh"}>
+      {/* Main Layout */}
       <Box
         p={2}
         sx={{
@@ -92,6 +96,7 @@ export default function DashboardLayout() {
                     <IconButton
                       sx={{ color: "#000" }}
                       onClick={() => {
+                        navigate(PATH_DASHBOARD.genral.app);
                         setState(el.index);
                       }}
                       key={el.index}
@@ -118,6 +123,7 @@ export default function DashboardLayout() {
                   <IconButton
                     sx={{ color: "#000" }}
                     onClick={() => {
+                      navigate(PATH_DASHBOARD.genral.settings);
                       setState(3);
                     }}
                   >
@@ -172,6 +178,7 @@ export default function DashboardLayout() {
                   <IconButton
                     sx={{ color: "#fff" }}
                     onClick={() => {
+                      navigate(PATH_DASHBOARD.genral.settings);
                       setState(3);
                     }}
                   >
@@ -217,10 +224,18 @@ export default function DashboardLayout() {
           </Stack>
         </Stack>
       </Box>
-      <Stack maxWidth={320}>
-        <Chat />
-      </Stack>
-      <Outlet />
+
+      {/* CHATS */}
+      {["/", "/app"].includes(window.location.pathname) ? (
+        <Stack maxWidth={320}>
+          <Chat />
+        </Stack>
+      ) : (
+        ""
+      )}
+
+      {/* Messeges Layout */}
+      {window.location.pathname === "/" ? <PageDefault /> : <Outlet />}
     </Stack>
   );
 }

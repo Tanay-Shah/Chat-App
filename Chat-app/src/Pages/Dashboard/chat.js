@@ -55,17 +55,15 @@ const ChatElement = (props) => {
           )}
 
           <Stack direction="column">
-
             <Typography variant={"subtitle2"} fontWeight={600}>
               {props.name}
             </Typography>
-          
+
             <Stack maxWidth={140}>
               <Typography noWrap variant="plain">
                 {props.msg}
               </Typography>
             </Stack>
-
           </Stack>
         </Stack>
 
@@ -94,14 +92,20 @@ function Chat() {
       <Box
         sx={{
           position: "relative",
-          width: "320",
+          width: 320,
           backgroundColor:
             theme.palette.mode === "light"
               ? "#F8FAFF"
               : theme.palette.background.paper,
         }}
       >
-        <Stack pl={3} pr={3} pt={3} spacing={2} sx={{ height: 'calc(100vh - 24px)'  }}>
+        <Stack
+          pl={3}
+          pr={3}
+          pt={3}
+          spacing={2}
+          sx={{ height: "calc(100vh - 24px)" }}
+        >
           <Stack
             direction="row"
             justifyContent="space-between"
