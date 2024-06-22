@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { faker } from "@faker-js/faker";
 import {
   Avatar,
@@ -20,17 +20,27 @@ import {
   Trash,
   X,
 } from "phosphor-react";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import Slide from "@mui/material/Slide";
 import { ToogleSidebar, UpdateSidebar } from "../../redux/features/slices";
 import { AntSwitch } from "../switch";
 import { useSelector } from "../../redux/store";
 import { SlimScrollbarStack } from "../search";
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 const Contact = () => {
   const Appstate = useSelector((state) => state.slice1);
   const theme = useTheme();
 
   return (
-    <Box sx={{ height: "100vh", width: 320}}>
+    <Box sx={{ height: "100vh", width: 320 }}>
       {/* Header */}
       <Stack
         pl={3}
@@ -59,7 +69,7 @@ const Contact = () => {
       {/* Details */}
       <SlimScrollbarStack
         sx={{
-          overflow: "scroll",
+          overflowY: "scroll",
         }}
       >
         <Stack sx={{ height: "calc(100vh - 111px)" }}>
@@ -71,6 +81,18 @@ const Contact = () => {
 };
 
 function ContactInfo({ Appstate, theme }) {
+  const [open, setOpen] = React.useState(false);
+
+  const [dialogName, setDialog] = useState("");
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Stack pt={2} pl={3} pr={3} sx={{ width: "max-width" }} spacing={2}>
       {/* INFO */}
@@ -224,6 +246,10 @@ function ContactInfo({ Appstate, theme }) {
 
         <Stack direction={"row"} pb={2} justifyContent={"space-evenly"}>
           <Button
+            onClick={() => {
+              setDialog("Block");
+              handleClickOpen();
+            }}
             variant="outlined"
             sx={{ borderRadius: 2 }}
             startIcon={<Prohibit size={20} />}
@@ -234,6 +260,10 @@ function ContactInfo({ Appstate, theme }) {
             </Typography>
           </Button>
           <Button
+            onClick={() => {
+              setDialog("Delete");
+              handleClickOpen();
+            }}
             variant="outlined"
             sx={{ borderRadius: 2 }}
             startIcon={<Trash size={20} />}
@@ -242,6 +272,26 @@ function ContactInfo({ Appstate, theme }) {
               Delete
             </Typography>
           </Button>
+
+          <Dialog
+            open={open}
+            TransitionComponent={Transition}
+            keepMounted
+            onClose={handleClose}
+            aria-describedby="alert-dialog-slide-description"
+            sx={{ "& .MuiPaper-root": { borderRadius: "16px" } }}
+          >
+            <DialogTitle>{`${dialogName} this contact`}</DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-slide-description">
+                {`Are you sure you want to ${dialogName} this contact?`}
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleClose}>Cancle</Button>
+              <Button onClick={handleClose}>Yes</Button>
+            </DialogActions>
+          </Dialog>
         </Stack>
       </Stack>
     </Stack>
