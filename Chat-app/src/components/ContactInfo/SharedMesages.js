@@ -124,7 +124,7 @@ function SharedDocs() {
         overflow: "scroll",
       }}
     >
-      <Stack spacing={2} pl={2} pr={2} mt={2} >
+      <Stack spacing={2} pl={2} pr={2} mt={2}>
         {Shared_docs.map((el) => {
           return (
             <Stack alignItems={el.incoming === true ? "start" : "end"} sx={{}}>
