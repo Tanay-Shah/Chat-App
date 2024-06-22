@@ -16,6 +16,7 @@ import { GearSix } from "phosphor-react";
 import { faker } from "@faker-js/faker";
 import { AntSwitch } from "../../components/switch";
 import { Contex } from "../../contexs/setting";
+import Chat from "../../Pages/Dashboard/chat";
 
 export default function DashboardLayout() {
   const { onToggle, themeMode } = useContext(Contex);
@@ -216,6 +217,9 @@ export default function DashboardLayout() {
           </Stack>
         </Stack>
       </Box>
+      <Stack maxWidth={320}>
+        <Chat />
+      </Stack>
       <Outlet />
     </Stack>
   );

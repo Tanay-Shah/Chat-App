@@ -1,5 +1,4 @@
 import React from "react";
-import Chat from "./chat";
 import { Box, Stack } from "@mui/material";
 import Conversation from "../../components/conversation";
 import Contact from "../../components/ContactInfo/contact";
@@ -11,11 +10,6 @@ export default function GeneralApp() {
 
   return (
     <Stack direction="row" sx={{ width: "100%", height: "100vh" }}>
-      {/* Chats */}
-      <Stack maxWidth={320}>
-        <Chat />
-      </Stack>
-
       {/* Conversation */}
       <Box
         sx={{

@@ -1,10 +1,12 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import DashboardLayout from "../layouts/Dashboard/index";
-import { PATH_DASHBOARD } from "./paths";
 import LazyLoding from "../components/lazyLoding";
+import Settings from "../Pages/Dashboard/Settings";
+// import { PATH_DASHBOARD } from "./paths";
 
-const Lodable = Component => props => {
+
+const Lodable = (Component) => (props) => {
   return (
     <Suspense fallback={<LazyLoding />}>
       <Component {...props} />
@@ -19,11 +21,12 @@ export default function Router() {
       element: <DashboardLayout />,
 
       children: [
-        {
-          element: <Navigate to={PATH_DASHBOARD.genral.app} replace />,
-          index: true
-        },
-        // Nesting of path Routes 
+        // {
+        //   // is some one goes to '/' so it redirect to '/apps'
+        //   element: <Navigate to={PATH_DASHBOARD.genral.app} replace />,
+        //   index: true,
+        // },
+        // Nesting of path Routes
         {
           path: "app",
           element: <GeneralApp />,
@@ -34,12 +37,16 @@ export default function Router() {
           //   }
           // ]
         },
+        {
+          path: "settings",
+          element: <Settings />,
+        },
 
         { path: "404", element: <Page404 /> },
-        { path: "*", element: <Navigate to="/404" replace /> }
-      ]
+        { path: "*", element: <Navigate to="/404" replace /> },
+      ],
     },
-    { path: "*", element: <Navigate to="/404" replace /> }
+    { path: "*", element: <Navigate to="/404" replace /> },
   ]);
 }
 
