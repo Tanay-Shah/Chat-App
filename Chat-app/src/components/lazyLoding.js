@@ -2,7 +2,7 @@ import React from 'react'
 
 function LazyLoding() {
   return (
-    <div>lazyLoding</div>
+    <div>lazyLodinggg</div>
   )
 }
 
