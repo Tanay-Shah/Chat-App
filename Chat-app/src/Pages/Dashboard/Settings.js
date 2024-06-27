@@ -16,7 +16,7 @@ const Settings = () => {
     >
       <Stack
         sx={{
-          width:320,
+          width: 320,
           height: "100%",
           bgcolor: "lightblue",
         }}
@@ -26,7 +26,7 @@ const Settings = () => {
 
       <Stack
         sx={{
-          width:'calc(100vh - 320px)',
+          width: "calc(100vw - 420px)",
           height: "100%",
           bgcolor: "lightgreen",
         }}
