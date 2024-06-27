@@ -16,7 +16,7 @@ const Settings = () => {
     >
       <Stack
         sx={{
-          width: 320,
+          width: 310,
           height: "100%",
           bgcolor: "lightblue",
         }}
