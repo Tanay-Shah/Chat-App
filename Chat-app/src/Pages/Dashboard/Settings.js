@@ -5,9 +5,9 @@ const Settings = () => {
   const theme = useTheme();
   return (
     <Stack
+      direction={"row"}
       sx={{
-        
-        height: "calc(100vh - 24px)",
+        height: "100vh",
         backgroundColor:
           theme.palette.mode === "light"
             ? "#F8FAFF"
@@ -15,11 +15,23 @@ const Settings = () => {
       }}
     >
       <Stack
-        spacing={2}
-        sx={{width:'calc(100vw - 110px)',height:'100%',bgcolor:'lightblue' }}
+        sx={{
+          width:320,
+          height: "100%",
+          bgcolor: "lightblue",
+        }}
       >
+        Left
+      </Stack>
 
-        SETTING
+      <Stack
+        sx={{
+          width:'calc(100vh - 320px)',
+          height: "100%",
+          bgcolor: "lightgreen",
+        }}
+      >
+        Right
       </Stack>
     </Stack>
   );
