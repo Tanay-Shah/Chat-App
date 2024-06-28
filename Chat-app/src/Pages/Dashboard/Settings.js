@@ -39,7 +39,7 @@ const Settings = () => {
         </Stack>
 
         {/* User Info */}
-        <Stack direction={"row"} alignItems={"center"} spacing={3}>
+        <Stack direction={"row"} alignItems={"center"} spacing={3} pt={2}>
           <Avatar src={faker.image.avatar()} />
         </Stack>
       </Stack>
