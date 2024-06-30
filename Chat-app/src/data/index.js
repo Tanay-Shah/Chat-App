@@ -142,7 +142,7 @@ const Chat_History = [
   },
   {
     type: "msg",
-    message: "Hi 👋 Panda, not bad, u ?",
+    message: "Hi 👋 Panda, not bad, u ???",
     incoming: false,
     outgoing: true,
   },
