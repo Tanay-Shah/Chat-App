@@ -6,7 +6,17 @@ import {
   Avatar,
   Divider,
 } from "@mui/material";
-import { Bell, CaretLeft } from "phosphor-react";
+import {
+  Bell,
+  CaretLeft,
+  Image,
+  Lock,
+  Key,
+  PencilCircle,
+  Info,
+  Notepad,
+  Keyboard,
+} from "phosphor-react";
 import { faker } from "@faker-js/faker";
 
 import React from "react";
@@ -46,13 +56,7 @@ const Settings = () => {
         </Stack>
 
         {/* User Info */}
-        <Stack
-          direction={"row"}
-          alignItems={"center"}
-          spacing={3}
-          pt={2}
-          pl={2}
-        >
+        <Stack direction={"row"} alignItems={"center"} spacing={3} pt={2}>
           <Avatar sx={{ width: 56, height: 56 }} src={faker.image.avatar()} />
           <Stack>
             <Typography variant={"h6"} fontWeight={550}>
@@ -64,50 +68,50 @@ const Settings = () => {
           </Stack>
         </Stack>
 
-        <Stack direction={"row"} spacing={4} pt={8}>
-          <Bell size={20} />
+        <Stack direction={"row"} spacing={4} pt={3}>
+          <Bell size={22} />
           <Typography variant={"body1"}>Notifications</Typography>
         </Stack>
         <Divider />
         {/* //////////////////////// */}
         <Stack direction={"row"} spacing={4}>
-          <Bell size={20} />
+          <Lock size={22} />
           <Typography variant={"body1"}>Privacy</Typography>
         </Stack>
         <Divider />
         {/* //////////////////////// */}
         <Stack direction={"row"} spacing={4}>
-          <Bell size={20} />
+          <Key size={22} />
           <Typography variant={"body1"}>Security</Typography>
         </Stack>
         <Divider />
         {/* //////////////////////// */}
         <Stack direction={"row"} spacing={4}>
-          <Bell size={20} />
+          <PencilCircle size={22} />
           <Typography variant={"body1"}>Theme</Typography>
         </Stack>
         <Divider />
         {/* //////////////////////// */}
         <Stack direction={"row"} spacing={4}>
-          <Bell size={20} />
+          <Image size={22} />
           <Typography variant={"body1"}>Chat Wallpaper</Typography>
         </Stack>
         <Divider />
         {/* //////////////////////// */}
         <Stack direction={"row"} spacing={4}>
-          <Bell size={20} />
+          <Notepad size={22} />
           <Typography variant={"body1"}>Request Account info</Typography>
         </Stack>
         <Divider />
         {/* //////////////////////// */}
         <Stack direction={"row"} spacing={4}>
-          <Bell size={20} />
+          <Keyboard size={22} />
           <Typography variant={"body1"}>Keyboard shortcuts</Typography>
         </Stack>
         <Divider />
         {/* //////////////////////// */}
         <Stack direction={"row"} spacing={4}>
-          <Bell size={20} />
+          <Info size={22} />
           <Typography variant={"body1"}>Help</Typography>
         </Stack>
         <Divider />
