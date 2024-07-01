@@ -70,49 +70,97 @@ const Settings = () => {
 
         <Stack direction={"row"} spacing={4} pt={3}>
           <Bell size={22} />
-          <Typography variant={"body1"}>Notifications</Typography>
+          <Typography
+            onClick={() => alert("HEY")}
+            sx={{ cursor: "pointer" }}
+            variant={"body1"}
+          >
+            Notifications
+          </Typography>
         </Stack>
         <Divider />
         {/* //////////////////////// */}
         <Stack direction={"row"} spacing={4}>
           <Lock size={22} />
-          <Typography variant={"body1"}>Privacy</Typography>
+          <Typography
+            onClick={() => alert("HEY")}
+            sx={{ cursor: "pointer" }}
+            variant={"body1"}
+          >
+            Privacy
+          </Typography>
         </Stack>
         <Divider />
         {/* //////////////////////// */}
         <Stack direction={"row"} spacing={4}>
           <Key size={22} />
-          <Typography variant={"body1"}>Security</Typography>
+          <Typography
+            onClick={() => alert("HEY")}
+            sx={{ cursor: "pointer" }}
+            variant={"body1"}
+          >
+            Security
+          </Typography>
         </Stack>
         <Divider />
         {/* //////////////////////// */}
         <Stack direction={"row"} spacing={4}>
           <PencilCircle size={22} />
-          <Typography variant={"body1"}>Theme</Typography>
+          <Typography
+            onClick={() => alert("HEY")}
+            sx={{ cursor: "pointer" }}
+            variant={"body1"}
+          >
+            Theme
+          </Typography>
         </Stack>
         <Divider />
         {/* //////////////////////// */}
         <Stack direction={"row"} spacing={4}>
           <Image size={22} />
-          <Typography variant={"body1"}>Chat Wallpaper</Typography>
+          <Typography
+            onClick={() => alert("HEY")}
+            sx={{ cursor: "pointer" }}
+            variant={"body1"}
+          >
+            Chat Wallpaper
+          </Typography>
         </Stack>
         <Divider />
         {/* //////////////////////// */}
         <Stack direction={"row"} spacing={4}>
           <Notepad size={22} />
-          <Typography variant={"body1"}>Request Account info</Typography>
+          <Typography
+            onClick={() => alert("HEY")}
+            sx={{ cursor: "pointer" }}
+            variant={"body1"}
+          >
+            Request Account info
+          </Typography>
         </Stack>
         <Divider />
         {/* //////////////////////// */}
         <Stack direction={"row"} spacing={4}>
           <Keyboard size={22} />
-          <Typography variant={"body1"}>Keyboard shortcuts</Typography>
+          <Typography
+            onClick={() => alert("HEY")}
+            sx={{ cursor: "pointer" }}
+            variant={"body1"}
+          >
+            Keyboard shortcuts
+          </Typography>
         </Stack>
         <Divider />
         {/* //////////////////////// */}
         <Stack direction={"row"} spacing={4}>
           <Info size={22} />
-          <Typography variant={"body1"}>Help</Typography>
+          <Typography
+            onClick={() => alert("HEY")}
+            sx={{ cursor: "pointer" }}
+            variant={"body1"}
+          >
+            Help
+          </Typography>
         </Stack>
         <Divider />
         {/* //////////////////////// */}
