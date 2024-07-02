@@ -171,10 +171,12 @@ const Settings = () => {
         sx={{
           width: "calc(100vw - 460px)",
           height: "100%",
-          bgcolor: "lightgreen",
+          bgcolor: "lightgray",
         }}
+        alignItems={"center"}
+        justifyContent={"space-around"}
       >
-        Right
+        <Typography variant="h2">Right Page</Typography>
       </Stack>
     </Stack>
   );

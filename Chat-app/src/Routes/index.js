@@ -5,7 +5,6 @@ import LazyLoding from "../components/lazyLoding";
 import Settings from "../Pages/Dashboard/Settings";
 // import { PATH_DASHBOARD } from "./paths";
 
-
 const Lodable = (Component) => (props) => {
   return (
     <Suspense fallback={<LazyLoding />}>
