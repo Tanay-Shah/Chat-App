@@ -176,7 +176,7 @@ const Settings = () => {
         alignItems={"center"}
         justifyContent={"space-around"}
       >
-        <Typography variant="h2">Right Page</Typography>
+        <Typography variant="h2">Right  Page!!!!</Typography>
       </Stack>
     </Stack>
   );
