@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import DashboardLayout from "../layouts/Dashboard/index";
 import LazyLoding from "../components/lazyLoding";
 import Settings from "../Pages/Dashboard/Settings";
+import MainLayout from "../layouts/main/MainLayout";
 // import { PATH_DASHBOARD } from "./paths";
 
 const Lodable = (Component) => (props) => {
@@ -15,6 +16,16 @@ const Lodable = (Component) => (props) => {
 
 export default function Router() {
   return useRoutes([
+    {
+      path: "/auth",
+      element: <MainLayout />,
+      children: [
+        {
+          path: "login",
+          element: <Login />,
+        },
+      ],
+    },
     {
       path: "/",
       element: <DashboardLayout />,
@@ -52,3 +63,5 @@ export default function Router() {
 const GeneralApp = Lodable(lazy(() => import("../Pages/Dashboard/GeneralApp")));
 
 const Page404 = Lodable(lazy(() => import("../Pages/page404")));
+
+const Login = Lodable(lazy(() => import("../Pages/auth/Login")));
