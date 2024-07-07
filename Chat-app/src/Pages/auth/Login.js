@@ -1,5 +1,5 @@
 import { Link, Typography, Stack } from "@mui/material";
-import React from "react";
+import React, { useId } from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import AuthSocial from "../../sections/auth/AuthSocial";
 import { useForm } from "react-hook-form";
@@ -14,6 +14,7 @@ const Login = () => {
       alert(JSON.stringify(data));
     }, 2000);
   };
+  const id = useId();
 
   return (
     <Stack mt={4} spacing={2}>
@@ -40,7 +41,8 @@ const Login = () => {
 
       {/* Login Form */}
       <form onSubmit={handleSubmit(form_submit)}>
-        <input {...register("firstName")} />
+        <label id={id}>firstName</label>
+        <input id={id} {...register("firstName")} />
         <select {...register("gender")}>
           <option value="female">female</option>
           <option value="male">male</option>
