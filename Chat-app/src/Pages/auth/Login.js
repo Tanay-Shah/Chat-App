@@ -6,12 +6,12 @@ import { useForm } from "react-hook-form";
 
 const Login = () => {
   const navigate = useNavigate();
-  const {register,handleSubmit}=useForm()
+  const { register, handleSubmit } = useForm();
 
-  const form_submit = () => {
+  const form_submit = (data) => {
     setTimeout(() => {
       navigate("/");
-      alert("Form Submited");
+      alert(JSON.stringify(data));
     }, 2000);
   };
 
@@ -40,13 +40,13 @@ const Login = () => {
 
       {/* Login Form */}
       <form onSubmit={handleSubmit(form_submit)}>
-      <input {...register("firstName")} />
-      <select {...register("gender")}>
-        <option value="female">female</option>
-        <option value="male">male</option>
-        <option value="other">other</option>
-      </select>
-      <input type="submit" />
+        <input {...register("firstName")} />
+        <select {...register("gender")}>
+          <option value="female">female</option>
+          <option value="male">male</option>
+          <option value="other">other</option>
+        </select>
+        <input type="submit" />
       </form>
 
       {/* Auth Social */}
