@@ -82,7 +82,7 @@ const ChatList = [
     img: faker.image.avatar(),
     name: faker.name.firstName(),
     msg: faker.music.songName(),
-    time: "04:00",
+    time: "05:00",
     unread: 0,
     pinned: false,
     online: true,
