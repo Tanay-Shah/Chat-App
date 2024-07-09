@@ -1,27 +1,11 @@
 import { Link, Typography, Stack } from "@mui/material";
-import React, { useId } from "react";
-import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import AuthSocial from "../../sections/auth/AuthSocial";
-import { useForm } from "react-hook-form";
+import LoginForm from "../../sections/auth/loginForm";
 
 const Login = () => {
-  const navigate = useNavigate();
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
-
-  const form_submit = (data) => {
-    setTimeout(() => {
-      navigate("/");
-      alert(JSON.stringify(data));
-    }, 2000);
-  };
-  const id = useId();
-
   return (
-    <Stack mt={4} spacing={2}>
+    <Stack mt={9} spacing={2}>
       <Typography variant="h4" fontWeight={550}>
         Login to Tawk
       </Typography>
@@ -44,7 +28,7 @@ const Login = () => {
       </Stack>
 
       {/* Login Form */}
-     
+      <LoginForm />
 
       {/* Auth Social */}
       <AuthSocial />
