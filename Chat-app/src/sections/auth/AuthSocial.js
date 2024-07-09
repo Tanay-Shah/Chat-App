@@ -41,7 +41,7 @@ const AuthSocial = () => {
       </Divider>
       <Stack justifyContent={"center"} spacing={2} direction={"row"}>
         {social.map((el) => {
-          return <IconButton>{el.logo}</IconButton>;
+          return <IconButton key={el.platform}>{el.logo}</IconButton>;
         })}
       </Stack>
     </div>
