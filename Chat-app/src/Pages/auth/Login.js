@@ -6,7 +6,11 @@ import { useForm } from "react-hook-form";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
 
   const form_submit = (data) => {
     setTimeout(() => {
@@ -40,16 +44,7 @@ const Login = () => {
       </Stack>
 
       {/* Login Form */}
-      <form onSubmit={handleSubmit(form_submit)}>
-        <label id={id}>firstName</label>
-        <input id={id} {...register("firstName")} />
-        <select {...register("gender")}>
-          <option value="female">female</option>
-          <option value="male">male</option>
-          <option value="other">other</option>
-        </select>
-        <input type="submit" />
-      </form>
+     
 
       {/* Auth Social */}
       <AuthSocial />
