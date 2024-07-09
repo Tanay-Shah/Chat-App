@@ -35,7 +35,7 @@ function LoginForm({ type }) {
           aria-invalid={errors.email ? "true" : "false"}
         />
         {errors.email?.type === "required" && (
-          <p role="alert">First name is required</p>
+          <p role="alert">Email is required</p>
         )}
 
         <TextField

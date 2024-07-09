@@ -28,7 +28,7 @@ export default function Router() {
         {
           path: "register",
           element: <Signup />,
-        }
+        },
       ],
     },
     {
