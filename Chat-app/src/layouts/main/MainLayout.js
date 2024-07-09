@@ -16,9 +16,6 @@ const MainLayout = () => {
         </Stack>
       </Stack>
 
-
-
-    
       <Outlet />
     </Container>
   );

@@ -30,6 +30,7 @@ function LoginForm({ type }) {
           type="email"
           id="outlined-basic"
           label="email"
+          color={errors.email?.type === "required" ? "error" : "primary"}
           variant="outlined"
           {...register("email", { required: true })}
           aria-invalid={errors.email ? "true" : "false"}
@@ -44,6 +45,7 @@ function LoginForm({ type }) {
           type={eye ? "password" : "text"}
           id="outlined-basic"
           label="Password"
+          color={errors.email?.type === "required" ? "error" : "primary"}
           variant="outlined"
           {...register("Password", { required: true })}
           aria-invalid={errors.Password ? "true" : "false"}
