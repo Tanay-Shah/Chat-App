@@ -1,4 +1,12 @@
-import { TextField, Stack, Button, Box, IconButton } from "@mui/material";
+import {
+  TextField,
+  Stack,
+  Button,
+  Box,
+  IconButton,
+  Link,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
 import AuthSocial from "./AuthSocial";
 import { Eye, EyeSlash } from "phosphor-react";
@@ -68,6 +76,11 @@ function SignupForm() {
           </Button>
         </Stack>
       </form>
+      <Stack mt={5} sx={{color:'grey',fontSize:12}}justifyContent={"center"} spacing={1} direction={"row"} alignItems={'center'}>
+        <Typography fontSize={13}> By signing up. I agree to</Typography>
+        <Link sx={{color:'black', fontWeight:500}}>Terms of Service</Link> <Typography fontSize={15}>and</Typography>
+        <Link sx={{color:'black', fontWeight:500}}> Privacy Policy</Link>
+      </Stack>
       <AuthSocial />
     </Box>
   );
