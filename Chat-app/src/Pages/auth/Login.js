@@ -28,7 +28,7 @@ const Login = () => {
       </Stack>
 
       {/* Login Form */}
-      <LoginForm />
+      <LoginForm type={'Login'}  />
 
       {/* Auth Social */}
       <AuthSocial />
