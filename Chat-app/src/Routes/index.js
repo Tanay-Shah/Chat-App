@@ -4,6 +4,7 @@ import DashboardLayout from "../layouts/Dashboard/index";
 import LazyLoding from "../components/lazyLoding";
 import Settings from "../Pages/Dashboard/Settings";
 import MainLayout from "../layouts/main/MainLayout";
+import Signup from "../Pages/auth/signup";
 // import { PATH_DASHBOARD } from "./paths";
 
 const Lodable = (Component) => (props) => {
@@ -24,6 +25,10 @@ export default function Router() {
           path: "login",
           element: <Login />,
         },
+        {
+          path: "register",
+          element: <Signup />,
+        }
       ],
     },
     {
