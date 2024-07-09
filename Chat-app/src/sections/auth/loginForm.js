@@ -31,11 +31,13 @@ function LoginForm({ type }) {
           id="outlined-basic"
           label="email"
           variant="outlined"
-          {...register("Name", { required: true })}
+          {...register("email", { required: true })}
           aria-invalid={errors.email ? "true" : "false"}
         />
         {errors.email?.type === "required" && (
-          <p role="alert">Email is required</p>
+          <p role="alert" style={{ color: "red" }}>
+            Email is required
+          </p>
         )}
 
         <TextField
@@ -56,7 +58,9 @@ function LoginForm({ type }) {
           }}
         />
         {errors.Password?.type === "required" && (
-          <p role="alert">Password is required</p>
+          <p role="alert" style={{ color: "red" }}>
+            Password is required
+          </p>
         )}
 
         <Button type={"submit"} variant="contained" sx={{ pt: 1 }}>
