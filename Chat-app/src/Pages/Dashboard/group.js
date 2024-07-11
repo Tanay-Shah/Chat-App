@@ -1,7 +1,10 @@
 import React from "react";
+import { Stack } from "@mui/material";
 
 function Group() {
-  return <div>Group</div>;
+  return <Stack>
+    Groupp
+  </Stack>
 }
 
 export default Group;
