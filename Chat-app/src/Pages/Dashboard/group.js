@@ -9,11 +9,7 @@ import {
   styled,
   Divider,
 } from "@mui/material";
-import {
-  CircleDashed,
-  MagnifyingGlass,
-  Plus,
-} from "phosphor-react";
+import { MagnifyingGlass, Plus } from "phosphor-react";
 import { useTheme } from "@mui/material/styles";
 import { ChatElement } from "./chat";
 import { ChatList } from "../../data";
@@ -71,17 +67,10 @@ function GroupChats() {
           spacing={2}
           sx={{ height: "calc(100vh - 24px)" }}
         >
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Typography variant={"h5"} fontWeight={600}>
+          <Stack pt={1} direction="row" alignItems="center">
+            <Typography variant={"h5"} fontWeight={550}>
               Groups
             </Typography>
-            <IconButton>
-              <CircleDashed size={32} />
-            </IconButton>
           </Stack>
 
           <Stack>
@@ -95,7 +84,7 @@ function GroupChats() {
               />
             </Search>
           </Stack>
-          <Stack spacing={2} pt={1}>
+          <Stack spacing={1}>
             <Stack
               alignItems="center"
               justifyContent={"space-between"}
