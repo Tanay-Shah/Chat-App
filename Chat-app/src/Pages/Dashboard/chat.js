@@ -177,4 +177,5 @@ function Chat() {
   );
 }
 
+export {ChatElement}
 export default Chat;
