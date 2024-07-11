@@ -4,7 +4,7 @@ import { Stack } from "@mui/material";
 function Group() {
   return <Stack>
     Groupp
-  </Stack>
+  </Stack> 
 }
 
 export default Group;
