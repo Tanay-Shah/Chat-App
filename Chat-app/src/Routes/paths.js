@@ -9,6 +9,7 @@ export const PATH_DASHBOARD = {
   genral: {
     app: Path(ROOTS_DASHBOARD, "app"),
     settings: Path(ROOTS_DASHBOARD, "settings"),
+    group:Path(ROOTS_DASHBOARD,'group'),
   },
 };
 

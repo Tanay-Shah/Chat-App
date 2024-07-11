@@ -96,7 +96,7 @@ export default function DashboardLayout() {
                     <IconButton
                       sx={{ color: "#000" }}
                       onClick={() => {
-                        navigate(PATH_DASHBOARD.genral.app);
+                        navigate(PATH_DASHBOARD.genral[el.route]);
                         setState(el.index);
                       }}
                       key={el.index}
@@ -152,6 +152,7 @@ export default function DashboardLayout() {
                     <IconButton
                       sx={{ color: "#fff" }}
                       onClick={() => {
+                        navigate(PATH_DASHBOARD.genral[el.route]);
                         setState(el.index);
                       }}
                       key={el.index}
