@@ -92,6 +92,7 @@ function GroupChats() {
             >
               <Typography variant="body2" color={lightBlue[200]}>
                 Create New Group
+                
               </Typography>
 
               <IconButton>
