@@ -76,7 +76,7 @@ const ChatList = [
     name: faker.name.firstName(),
     msg: faker.music.songName(),
     time: "10:35",
-    unread: 3,
+    unread: 3, 
     pinned: false,
     online: true,
   },

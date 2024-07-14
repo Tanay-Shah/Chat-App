@@ -58,6 +58,7 @@ export default function DashboardLayout() {
           <Stack alignItems="center" spacing={4}>
             <Box
               sx={{
+                p:'6px',
                 background: "#0162C4",
                 height: 64,
                 width: 64,
