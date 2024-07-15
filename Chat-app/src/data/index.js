@@ -56,7 +56,7 @@ const ChatList = [
     name: faker.name.firstName(),
     msg: faker.lorem.words(50),
     time: "9:36",
-    unread: 0,
+    unread: 1,
     pinned: true,
     online: true,
   },
